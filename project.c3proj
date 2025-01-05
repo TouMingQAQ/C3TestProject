@@ -99,6 +99,13 @@
 		},
 		{
 			"type": "behavior",
+			"id": "MoveTo",
+			"name": "Move To",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
 			"id": "Persist",
 			"name": "Persist",
 			"author": "Scirra",
@@ -154,7 +161,8 @@
 			"Video",
 			"BinaryData",
 			"BinaryData2",
-			"Tween"
+			"Tween",
+			"MoveToObject"
 		],
 		"subfolders": [
 			{
@@ -190,7 +198,8 @@
 			"OnlyOnce",
 			"Wait",
 			"Group",
-			"Video"
+			"Video",
+			"MoveTo"
 		],
 		"subfolders": [
 			{
@@ -218,7 +227,8 @@
 			"OnlyOnceSheet",
 			"WaitSheet",
 			"GroupSheet",
-			"VideoSheet"
+			"VideoSheet",
+			"MoveToSheet"
 		],
 		"subfolders": [
 			{
