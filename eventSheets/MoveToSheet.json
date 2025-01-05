@@ -1,0 +1,396 @@
+{
+	"name": "MoveToSheet",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 686375247644250
+				}
+			],
+			"actions": [
+				{
+					"id": "move-to-position",
+					"objectClass": "MoveToObject",
+					"sid": 360625898389447,
+					"behaviorType": "MoveTo",
+					"parameters": {
+						"x": "500",
+						"y": "250",
+						"mode": "add-waypoint"
+					}
+				},
+				{
+					"id": "move-to-position",
+					"objectClass": "MoveToObject",
+					"sid": 181033113975606,
+					"behaviorType": "MoveTo",
+					"parameters": {
+						"x": "0",
+						"y": "0",
+						"mode": "add-waypoint"
+					}
+				},
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 687581561175038,
+					"parameters": {
+						"type": "log",
+						"message": "\"Start Move\""
+					}
+				}
+			],
+			"sid": 319193331356575
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-arrived",
+					"objectClass": "MoveToObject",
+					"sid": 665096646294837,
+					"behaviorType": "MoveTo"
+				}
+			],
+			"actions": [
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 351112850047376,
+					"parameters": {
+						"type": "log",
+						"message": "\"arrived\"&MoveToObject.X   &\",\" & MoveToObject.Y"
+					}
+				}
+			],
+			"sid": 536442414825075
+		},
+		{
+			"eventType": "comment",
+			"text": "按A移动到蓝色"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 490340067472051,
+					"parameters": {
+						"key": 65
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "move-to-object",
+					"objectClass": "MoveToObject",
+					"sid": 147427095348031,
+					"behaviorType": "MoveTo",
+					"parameters": {
+						"object": "TestObject",
+						"image-point": "0",
+						"mode": "direct"
+					}
+				}
+			],
+			"sid": 171123657019180
+		},
+		{
+			"eventType": "comment",
+			"text": "按S旋转30°C"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 903471862667088,
+					"parameters": {
+						"key": 83
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-rotate-speed",
+					"objectClass": "MoveToObject",
+					"sid": 190346979358800,
+					"behaviorType": "MoveTo",
+					"parameters": {
+						"rotate-speed": "0"
+					}
+				},
+				{
+					"id": "set-moving-angle",
+					"objectClass": "MoveToObject",
+					"sid": 735977097744628,
+					"behaviorType": "MoveTo",
+					"parameters": {
+						"angle": "80"
+					}
+				},
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 804533787344974,
+					"parameters": {
+						"type": "log",
+						"message": "\"SetRotate\"&TestObject.Angle"
+					}
+				}
+			],
+			"sid": 543879475630166
+		},
+		{
+			"eventType": "comment",
+			"text": "按F设置加速度"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 313932850051172,
+					"parameters": {
+						"key": 70
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-acceleration",
+					"objectClass": "MoveToObject",
+					"sid": 890731268188087,
+					"behaviorType": "MoveTo",
+					"parameters": {
+						"acceleration": "30000"
+					}
+				},
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 357025780516423,
+					"parameters": {
+						"type": "log",
+						"message": "\"Acceleration\"&MoveToObject.MoveTo.Acceleration"
+					}
+				}
+			],
+			"sid": 932335340227285
+		},
+		{
+			"eventType": "comment",
+			"text": "按G设置减速加速度 旋转速度"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 874193601307650,
+					"parameters": {
+						"key": 71
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-deceleration",
+					"objectClass": "MoveToObject",
+					"sid": 542911663864140,
+					"behaviorType": "MoveTo",
+					"parameters": {
+						"deceleration": "30000"
+					}
+				},
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 599318563899247,
+					"parameters": {
+						"type": "log",
+						"message": "\"Deceleration\"&MoveToObject.MoveTo.Deceleration"
+					}
+				},
+				{
+					"id": "set-rotate-speed",
+					"objectClass": "MoveToObject",
+					"sid": 202977347316471,
+					"behaviorType": "MoveTo",
+					"parameters": {
+						"rotate-speed": "400"
+					}
+				},
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 665263686047778,
+					"parameters": {
+						"type": "log",
+						"message": "\"RotateSpeed\"&MoveToObject.MoveTo.RotateSpeed"
+					}
+				},
+				{
+					"id": "set-stop-on-solids",
+					"objectClass": "MoveToObject",
+					"sid": 723829270387522,
+					"behaviorType": "MoveTo",
+					"parameters": {
+						"enabled": false
+					}
+				}
+			],
+			"sid": 511270352218661
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 797635542602749,
+					"parameters": {
+						"key": 72
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "stop",
+					"objectClass": "MoveToObject",
+					"sid": 398802447109262,
+					"behaviorType": "MoveTo"
+				}
+			],
+			"sid": 307516553060934
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 549624221874982,
+					"parameters": {
+						"key": 81
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "move-to-position",
+					"objectClass": "MoveToObject",
+					"sid": 275629248677917,
+					"behaviorType": "MoveTo",
+					"parameters": {
+						"x": "500",
+						"y": "400",
+						"mode": "direct"
+					}
+				}
+			],
+			"sid": 372973081456529
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 886506295557133,
+					"parameters": {
+						"key": 87
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-speed",
+					"objectClass": "MoveToObject",
+					"sid": 960618139465828,
+					"behaviorType": "MoveTo",
+					"parameters": {
+						"speed": "0"
+					}
+				},
+				{
+					"id": "set-max-speed",
+					"objectClass": "MoveToObject",
+					"sid": 144796415453665,
+					"behaviorType": "MoveTo",
+					"parameters": {
+						"max-speed": "0"
+					}
+				},
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 602537757249589,
+					"parameters": {
+						"type": "log",
+						"message": "\"Speed\"&MoveToObject.MoveTo.Speed&\"MaxSpeed\"&MoveToObject.MoveTo.MaxSpeed"
+					}
+				}
+			],
+			"sid": 305838362323523
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-speed",
+					"objectClass": "MoveToObject",
+					"sid": 753859045497272,
+					"behaviorType": "MoveTo",
+					"parameters": {
+						"comparison": 0,
+						"speed": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 334845055252464,
+					"parameters": {
+						"type": "log",
+						"message": "\"Speed=000000\""
+					}
+				}
+			],
+			"sid": 962716701366749
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-moving",
+					"objectClass": "MoveToObject",
+					"sid": 192643062609558,
+					"behaviorType": "MoveTo"
+				}
+			],
+			"actions": [
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 356583788527255,
+					"parameters": {
+						"type": "log",
+						"message": "\"moving\""
+					}
+				}
+			],
+			"sid": 784470124347646
+		}
+	],
+	"sid": 404759963550362
+}
