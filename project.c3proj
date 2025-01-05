@@ -8,6 +8,13 @@
 	"usedAddons": [
 		{
 			"type": "plugin",
+			"id": "AdvancedRandom",
+			"name": "Advanced Random",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "Arr",
 			"name": "Array",
 			"author": "Scirra",
@@ -162,7 +169,8 @@
 			"BinaryData",
 			"BinaryData2",
 			"Tween",
-			"MoveToObject"
+			"MoveToObject",
+			"AdvancedRandom"
 		],
 		"subfolders": [
 			{
@@ -199,7 +207,8 @@
 			"Wait",
 			"Group",
 			"Video",
-			"MoveTo"
+			"MoveTo",
+			"AdvancedRandom"
 		],
 		"subfolders": [
 			{
@@ -228,7 +237,8 @@
 			"WaitSheet",
 			"GroupSheet",
 			"VideoSheet",
-			"MoveToSheet"
+			"MoveToSheet",
+			"AdvancedRandomSheet"
 		],
 		"subfolders": [
 			{

@@ -1,0 +1,413 @@
+{
+	"name": "AdvancedRandomSheet",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 183998977742041,
+					"parameters": {
+						"key": 65
+					}
+				}
+			],
+			"actions": [],
+			"sid": 215880155856377,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 666083493588537,
+							"parameters": {
+								"type": "log",
+								"message": "\"TestRandom Billow2d:\" & AdvancedRandom.Billow2d(11,22)"
+							}
+						},
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 490651892741267,
+							"parameters": {
+								"type": "log",
+								"message": "\"TestRandom Billow3d:\" & AdvancedRandom.Billow3d(11,22,33)"
+							}
+						},
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 879482736858106,
+							"parameters": {
+								"type": "log",
+								"message": "\"TestRandom Cellular2d:\" & AdvancedRandom.Cellular2d(11,22)"
+							}
+						},
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 250888104537810,
+							"parameters": {
+								"type": "log",
+								"message": "\"TestRandom Cellular3d:\" & AdvancedRandom.Cellular3d(11,22,33)"
+							}
+						},
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 433753379819822,
+							"parameters": {
+								"type": "log",
+								"message": "\"TestRandom Classic2d:\" & AdvancedRandom.Classic2d(11,22)"
+							}
+						},
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 441005521250674,
+							"parameters": {
+								"type": "log",
+								"message": "\"TestRandom Classic3d:\" & AdvancedRandom.Classic3d(11,22,33)"
+							}
+						},
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 434205904636820,
+							"parameters": {
+								"type": "log",
+								"message": "\"TestRandom Ridged2d:\" & AdvancedRandom.Ridged2d(11,22)"
+							}
+						},
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 258969563406185,
+							"parameters": {
+								"type": "log",
+								"message": "\"TestRandom Ridged3d:\" & AdvancedRandom.Ridged3d(11,22,33)"
+							}
+						},
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 895519390443420,
+							"parameters": {
+								"type": "log",
+								"message": "\"TestRandom Voronoi2d:\" & AdvancedRandom.Voronoi2d(11,22)"
+							}
+						},
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 805852760655237,
+							"parameters": {
+								"type": "log",
+								"message": "\"TestRandom Voronoi3d:\" & AdvancedRandom.Voronoi3d(11,22,33)"
+							}
+						},
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 669213929925483,
+							"parameters": {
+								"type": "log",
+								"message": "\"TestRandom Seed:\" & AdvancedRandom.Seed"
+							}
+						}
+					],
+					"sid": 439856331044258
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 575575845067529,
+					"parameters": {
+						"key": 82
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "seed",
+					"objectClass": "AdvancedRandom",
+					"sid": 448830724562875,
+					"parameters": {
+						"seed": "\"\""
+					}
+				}
+			],
+			"sid": 226514905725662
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 835050595743115,
+					"parameters": {
+						"key": 83
+					}
+				}
+			],
+			"actions": [],
+			"sid": 385408096477928,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 398618679732825,
+							"parameters": {
+								"type": "log",
+								"message": "\"TestRandom RandomSeed:\" & AdvancedRandom.RandomSeed"
+							}
+						}
+					],
+					"sid": 283517737816613
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 799740482372992,
+					"parameters": {
+						"key": 81
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "addProbabilityEntry",
+					"objectClass": "AdvancedRandom",
+					"sid": 137251726202685,
+					"parameters": {
+						"value": "\"114514\"",
+						"weight": "3"
+					}
+				},
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 905406355785009,
+					"parameters": {
+						"type": "log",
+						"message": "\"Weighted:\" & AdvancedRandom.Weighted & \"|WeightedByName:\" & AdvancedRandom.WeightedByName(\"\")"
+					}
+				},
+				{
+					"id": "addProbabilityEntry",
+					"objectClass": "AdvancedRandom",
+					"sid": 207306395923077,
+					"parameters": {
+						"value": "\"R1\"",
+						"weight": "1"
+					}
+				},
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 168476133291437,
+					"parameters": {
+						"type": "log",
+						"message": "AdvancedRandom.ProbabilityTableAsJSON"
+					}
+				},
+				{
+					"id": "createProbabilityTable",
+					"objectClass": "AdvancedRandom",
+					"sid": 157678475221625,
+					"parameters": {
+						"name": "\"TestTable\""
+					}
+				},
+				{
+					"id": "addProbabilityEntry",
+					"objectClass": "AdvancedRandom",
+					"sid": 807705309543482,
+					"parameters": {
+						"value": "\"R1\"",
+						"weight": "0.4"
+					}
+				},
+				{
+					"id": "addProbabilityEntry",
+					"objectClass": "AdvancedRandom",
+					"sid": 649507084683279,
+					"parameters": {
+						"value": "\"R1\"",
+						"weight": "0.2"
+					}
+				},
+				{
+					"id": "addProbabilityEntry",
+					"objectClass": "AdvancedRandom",
+					"sid": 585129149791743,
+					"parameters": {
+						"value": "\"R2\"",
+						"weight": "0.2"
+					}
+				},
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 191543031529675,
+					"parameters": {
+						"type": "log",
+						"message": "AdvancedRandom.ProbabilityTableAsJSON & \"     Weighted:\" & AdvancedRandom.Weighted"
+					}
+				},
+				{
+					"id": "createProbabilityTable",
+					"objectClass": "AdvancedRandom",
+					"sid": 671510961551195,
+					"parameters": {
+						"name": "\"TestTable2\""
+					}
+				},
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 424726339183361,
+					"parameters": {
+						"type": "log",
+						"message": "AdvancedRandom.ProbabilityTableAsJSON & \"     Weighted:\" & AdvancedRandom.Weighted"
+					}
+				},
+				{
+					"id": "setProbabilityTable",
+					"objectClass": "AdvancedRandom",
+					"sid": 891307617601294,
+					"parameters": {
+						"name": "\"TestTable\""
+					}
+				},
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 787773375852376,
+					"parameters": {
+						"type": "log",
+						"message": "AdvancedRandom.ProbabilityTableAsJSON& \"     Weighted:\" & AdvancedRandom.Weighted"
+					}
+				},
+				{
+					"id": "setProbabilityTable",
+					"objectClass": "AdvancedRandom",
+					"sid": 297393014521582,
+					"parameters": {
+						"name": "\"\""
+					}
+				},
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 433787379362442,
+					"parameters": {
+						"type": "log",
+						"message": "AdvancedRandom.ProbabilityTableAsJSON & \"     Weighted:\" & AdvancedRandom.Weighted"
+					}
+				},
+				{
+					"id": "createProbabilityTable",
+					"objectClass": "AdvancedRandom",
+					"sid": 369049454741914,
+					"parameters": {
+						"name": "\"TestTable\""
+					}
+				},
+				{
+					"id": "addProbabilityEntry",
+					"objectClass": "AdvancedRandom",
+					"sid": 653202202117299,
+					"parameters": {
+						"value": "\"R1\"",
+						"weight": "0.2"
+					}
+				},
+				{
+					"id": "addProbabilityEntry",
+					"objectClass": "AdvancedRandom",
+					"sid": 922676488771563,
+					"parameters": {
+						"value": "1231",
+						"weight": "0.1"
+					}
+				},
+				{
+					"id": "addProbabilityEntry",
+					"objectClass": "AdvancedRandom",
+					"sid": 955054932630738,
+					"parameters": {
+						"value": "\"R1\"",
+						"weight": "0.2"
+					}
+				},
+				{
+					"id": "addProbabilityEntry",
+					"objectClass": "AdvancedRandom",
+					"sid": 252514309750317,
+					"parameters": {
+						"value": "\"R1\"",
+						"weight": "0.2"
+					}
+				},
+				{
+					"id": "removeProbabilityEntry",
+					"objectClass": "AdvancedRandom",
+					"sid": 474888767252967,
+					"parameters": {
+						"value": "\"R1\"",
+						"weight": "0.3"
+					}
+				},
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 265054301982359,
+					"parameters": {
+						"type": "log",
+						"message": "AdvancedRandom.ProbabilityTableAsJSON & \"     Weighted:\" & AdvancedRandom.Weighted"
+					}
+				},
+				{
+					"id": "removeProbabilityEntry",
+					"objectClass": "AdvancedRandom",
+					"sid": 718366927254257,
+					"parameters": {
+						"value": "\"R1\"",
+						"weight": "0.2"
+					}
+				},
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 585890741626836,
+					"parameters": {
+						"type": "log",
+						"message": "AdvancedRandom.ProbabilityTableAsJSON & \"     Weighted:\" & AdvancedRandom.Weighted"
+					}
+				}
+			],
+			"sid": 676012799818750
+		}
+	],
+	"sid": 602832245936402
+}
