@@ -1,0 +1,509 @@
+{
+	"name": "PickSheet",
+	"events": [
+		{
+			"eventType": "comment",
+			"text": "测试Pick下只Pick和Pick+Foreach的区别"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 489313225428276,
+					"parameters": {
+						"key": 80
+					}
+				}
+			],
+			"actions": [],
+			"sid": 108645024675454,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-comparison",
+							"objectClass": "System",
+							"sid": 871624295188927,
+							"parameters": {
+								"object": "TestPickA",
+								"expression": "TestPickA.PickBool1",
+								"comparison": 0,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 114814599439415,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 117929469936434,
+									"parameters": {
+										"type": "log",
+										"message": "\"OnlyPick\""
+									}
+								}
+							],
+							"sid": 352135707466320
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 360404628056441,
+									"parameters": {
+										"type": "log",
+										"message": "\"PickA:\" & TestPickA.UID"
+									}
+								},
+								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 267913468317199,
+									"parameters": {
+										"type": "log",
+										"message": "\"PickB:\" & TestPickB.UID"
+									}
+								}
+							],
+							"sid": 279943513452282
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 978869989731096,
+									"parameters": {
+										"type": "log",
+										"message": "\"ForeachPick\""
+									}
+								}
+							],
+							"sid": 777789932052358
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for-each",
+									"objectClass": "System",
+									"sid": 838421394279755,
+									"parameters": {
+										"object": "TestPickA"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 428853397757580,
+									"parameters": {
+										"type": "log",
+										"message": "\"PickA:\" & TestPickA.UID"
+									}
+								},
+								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 636579063408725,
+									"parameters": {
+										"type": "log",
+										"message": "\"PickB:\" & TestPickB.UID"
+									}
+								}
+							],
+							"sid": 103210073894502
+						},
+						{
+							"eventType": "comment",
+							"text": "对B进行Pick导致其数量为空"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-comparison",
+									"objectClass": "System",
+									"sid": 798086237601075,
+									"parameters": {
+										"object": "TestPickB",
+										"expression": "TestPickB.PickBool1",
+										"comparison": 0,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 916029751074689,
+									"parameters": {
+										"type": "log",
+										"message": "\"SelectTestB\""
+									}
+								},
+								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 345074484036411,
+									"parameters": {
+										"type": "log",
+										"message": "\"PickA:\" & TestPickA.UID"
+									}
+								},
+								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 874750260720359,
+									"parameters": {
+										"type": "log",
+										"message": "\"PickB:\" & TestPickB.UID"
+									}
+								}
+							],
+							"sid": 887416869625517
+						}
+					]
+				}
+			]
+		},
+		{
+			"eventType": "comment",
+			"text": "测试Pick下只Pick对象对选择对象所属的Family的影响的区别"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 338362925195389,
+					"parameters": {
+						"key": 65
+					}
+				}
+			],
+			"actions": [],
+			"sid": 921989755128294,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-comparison",
+							"objectClass": "System",
+							"sid": 198464651158996,
+							"parameters": {
+								"object": "TestPickA",
+								"expression": "TestPickA.PickValue1",
+								"comparison": 1,
+								"value": "11"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 719543438687763,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 700398987117852,
+									"parameters": {
+										"type": "log",
+										"message": "\"PickF\""
+									}
+								}
+							],
+							"sid": 382183653441031
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for-each",
+									"objectClass": "System",
+									"sid": 808986820266378,
+									"parameters": {
+										"object": "Family1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 968623214151307,
+									"parameters": {
+										"type": "log",
+										"message": "\"PickF:\" & Family1.UID"
+									}
+								}
+							],
+							"sid": 541869375927160
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 521811328538331,
+									"parameters": {
+										"type": "log",
+										"message": "\"PickA\""
+									}
+								}
+							],
+							"sid": 817483123887169
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for-each",
+									"objectClass": "System",
+									"sid": 144421319957245,
+									"parameters": {
+										"object": "TestPickA"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 900363586879363,
+									"parameters": {
+										"type": "log",
+										"message": "\"PickA:\" & TestPickA.UID"
+									}
+								}
+							],
+							"sid": 493522326191997
+						}
+					]
+				}
+			]
+		},
+		{
+			"eventType": "comment",
+			"text": "测试PickFamily对Family所属的子对象是否有影响"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 966402545599574,
+					"parameters": {
+						"key": 66
+					}
+				}
+			],
+			"actions": [],
+			"sid": 329833370191469,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 514837338267546,
+							"parameters": {
+								"object": "TestPickA"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 838052646593238,
+							"parameters": {
+								"type": "log",
+								"message": "\"PickA:\" & TestPickA.UID"
+							}
+						}
+					],
+					"sid": 652083776730663
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 491435185537973,
+							"parameters": {
+								"object": "TestPickB"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 692655308358356,
+							"parameters": {
+								"type": "log",
+								"message": "\"PickB:\" & TestPickB.UID"
+							}
+						}
+					],
+					"sid": 303094560857074
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-comparison",
+							"objectClass": "System",
+							"sid": 891271701904210,
+							"parameters": {
+								"object": "Family1",
+								"expression": "TestPickA.PickValue1",
+								"comparison": 0,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 301694484295708,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 637733635585504,
+									"parameters": {
+										"type": "log",
+										"message": "\"PickF\""
+									}
+								}
+							],
+							"sid": 272871489375549
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for-each",
+									"objectClass": "System",
+									"sid": 894140572822075,
+									"parameters": {
+										"object": "Family1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 246952275128009,
+									"parameters": {
+										"type": "log",
+										"message": "\"PickF:\" & Family1.UID"
+									}
+								}
+							],
+							"sid": 925261333361241
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 187978356302277,
+									"parameters": {
+										"type": "log",
+										"message": "\"PickA\""
+									}
+								}
+							],
+							"sid": 417321161944336
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for-each",
+									"objectClass": "System",
+									"sid": 871795978205917,
+									"parameters": {
+										"object": "TestPickA"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 104287951968666,
+									"parameters": {
+										"type": "log",
+										"message": "\"PickA:\" & TestPickA.UID"
+									}
+								}
+							],
+							"sid": 726640293608938
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for-each",
+									"objectClass": "System",
+									"sid": 384255810330626,
+									"parameters": {
+										"object": "TestPickB"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 823354071221443,
+									"parameters": {
+										"type": "log",
+										"message": "\"PickB:\" & TestPickB.UID"
+									}
+								}
+							],
+							"sid": 329540048997476
+						}
+					]
+				}
+			]
+		}
+	],
+	"sid": 412920271917620
+}

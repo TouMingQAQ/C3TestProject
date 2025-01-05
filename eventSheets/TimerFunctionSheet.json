@@ -1,0 +1,789 @@
+{
+	"name": "TimerFunctionSheet",
+	"events": [
+		{
+			"eventType": "comment",
+			"text": "按T键启用TestObject的Tag为\"TestTimer\"的Timer"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 743146555989338,
+					"parameters": {
+						"key": 84
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 989756471803526,
+					"parameters": {
+						"type": "log",
+						"message": "\"Start TestTimer \" & tickcount"
+					}
+				},
+				{
+					"id": "start-timer",
+					"objectClass": "TestObject",
+					"sid": 463475477722988,
+					"behaviorType": "Timer",
+					"parameters": {
+						"duration": "1.0",
+						"type": "once",
+						"tag": "\"TestTimer\""
+					}
+				},
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 646551854459023,
+					"parameters": {
+						"type": "log",
+						"message": "\"Start TestTimer End \"&tickcount"
+					}
+				}
+			],
+			"sid": 401497624193588
+		},
+		{
+			"eventType": "comment",
+			"text": "按Y键主动停止TestObject的Tag为\"TestTimer\"的Timer，测试是否会调用其OnTimer事件"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 584609697182569,
+					"parameters": {
+						"key": 89
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 893984881991265,
+					"parameters": {
+						"type": "log",
+						"message": "\"Stop TestTimer Start \" & tickcount"
+					}
+				},
+				{
+					"id": "stop-timer",
+					"objectClass": "TestObject",
+					"sid": 982402378286393,
+					"behaviorType": "Timer",
+					"parameters": {
+						"tag": "\"TestTimer\""
+					}
+				},
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 390560652230621,
+					"parameters": {
+						"type": "log",
+						"message": "\"Stop TestTimer End \" & tickcount"
+					}
+				}
+			],
+			"sid": 107007853990018
+		},
+		{
+			"eventType": "comment",
+			"text": "删除对象，测试OnDestroy"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 979262833915400,
+					"parameters": {
+						"key": 68
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 311545062723706,
+					"parameters": {
+						"type": "log",
+						"message": "\"Destroy Object Start \" & tickcount"
+					}
+				},
+				{
+					"id": "destroy",
+					"objectClass": "TestObject",
+					"sid": 284418445783314
+				},
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 778611000991084,
+					"parameters": {
+						"type": "log",
+						"message": "\"Destroy Object End \" & tickcount"
+					}
+				}
+			],
+			"sid": 794271017796230
+		},
+		{
+			"eventType": "comment",
+			"text": "测试切换图片的Frame后，事件的先后顺序"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 596116878880734,
+					"parameters": {
+						"key": 70
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 570614029171016,
+					"parameters": {
+						"type": "log",
+						"message": "\"ChangeFrame Start \" & tickcount"
+					}
+				},
+				{
+					"id": "set-animation-frame",
+					"objectClass": "TestObject",
+					"sid": 878779566562786,
+					"parameters": {
+						"frame-number": "1"
+					}
+				},
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 483150876042939,
+					"parameters": {
+						"type": "log",
+						"message": "\"ChangeFrame End \" & tickcount"
+					}
+				}
+			],
+			"sid": 591082497639889
+		},
+		{
+			"eventType": "comment",
+			"text": "测试异步函数，包含测试异步函数中等待函数是否会等待之前所有异步函数，是否会等待异步函数中嵌套的异步函数"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 678342798771352,
+					"parameters": {
+						"key": 65
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 585199995074875,
+					"parameters": {
+						"type": "log",
+						"message": "\"TestAsynFunction Start  \"& tickcount"
+					}
+				},
+				{
+					"callFunction": "AsyncFunction",
+					"sid": 743793350002494
+				},
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 802993710223471,
+					"parameters": {
+						"type": "log",
+						"message": "\"TestAsynFunction End \"& tickcount"
+					}
+				}
+			],
+			"sid": 424156908267978
+		},
+		{
+			"eventType": "comment",
+			"text": "测试物体创建后的一系列事件发生时间"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 624375090219279,
+					"parameters": {
+						"key": 67
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 768710709973448,
+					"parameters": {
+						"type": "log",
+						"message": "\"CreateObject Start  \"& tickcount"
+					}
+				},
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 475189838840229,
+					"parameters": {
+						"object-to-create": "TestObject",
+						"layer": "0",
+						"x": "0",
+						"y": "0",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
+				},
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 651919496244417,
+					"parameters": {
+						"type": "log",
+						"message": "\"CreateObject End \"& tickcount"
+					}
+				}
+			],
+			"sid": 280848000948226
+		},
+		{
+			"eventType": "comment",
+			"text": "测试TimeScale"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 485810030048954,
+					"parameters": {
+						"key": 80
+					}
+				}
+			],
+			"actions": [],
+			"sid": 305471799417402,
+			"children": [
+				{
+					"eventType": "variable",
+					"name": "g_timeScale",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 702704483498934
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 123390451896924,
+							"parameters": {
+								"variable": "g_timeScale",
+								"value": "timescale"
+							}
+						}
+					],
+					"sid": 361704371954536,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 677604365987624,
+									"parameters": {
+										"variable": "g_timeScale",
+										"comparison": 0,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-time-scale",
+									"objectClass": "System",
+									"sid": 296456002802726,
+									"parameters": {
+										"time-scale": "1.0"
+									}
+								},
+								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 153934006296971,
+									"parameters": {
+										"type": "log",
+										"message": "\"SetTimeScale:1 \"& tickcount"
+									}
+								}
+							],
+							"sid": 169433465143253
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 793182212186086
+								}
+							],
+							"actions": [
+								{
+									"id": "set-time-scale",
+									"objectClass": "System",
+									"sid": 405930936090536,
+									"parameters": {
+										"time-scale": "0"
+									}
+								},
+								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 126557616004462,
+									"parameters": {
+										"type": "log",
+										"message": "\"SetTimeScale:0 \"& tickcount"
+									}
+								}
+							],
+							"sid": 698506390735932
+						}
+					]
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-timer",
+					"objectClass": "TestObject",
+					"sid": 981385063034191,
+					"behaviorType": "Timer",
+					"parameters": {
+						"tag": "\"TestTimer\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 436680586836959,
+					"parameters": {
+						"type": "log",
+						"message": "\"On TestTimer \"& tickcount"
+					}
+				}
+			],
+			"sid": 919320075945837
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-animation-frame-changed",
+					"objectClass": "TestObject",
+					"sid": 763677466842032
+				}
+			],
+			"actions": [
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 805222119198884,
+					"parameters": {
+						"type": "log",
+						"message": "\"On FrameChanged \"& tickcount"
+					}
+				}
+			],
+			"sid": 576015250638014
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-created",
+					"objectClass": "TestObject",
+					"sid": 920083545581316
+				}
+			],
+			"actions": [
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 135563813717124,
+					"parameters": {
+						"type": "log",
+						"message": "\"On Create \"& tickcount"
+					}
+				}
+			],
+			"sid": 705984240462037
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-destroyed",
+					"objectClass": "TestObject",
+					"sid": 175482267394412
+				}
+			],
+			"actions": [
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 473511513915375,
+					"parameters": {
+						"type": "log",
+						"message": "\"On Destroy \"& tickcount"
+					}
+				}
+			],
+			"sid": 791768247127003
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 581022889197237
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 364545255917536
+				}
+			],
+			"actions": [
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 637187236669184,
+					"parameters": {
+						"type": "log",
+						"message": "\"On EveryTick once \"& tickcount"
+					}
+				}
+			],
+			"sid": 294804704711489
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 482183447631265
+				}
+			],
+			"actions": [
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 993141303077477,
+					"parameters": {
+						"type": "log",
+						"message": "\"On LayoutStart \"& tickcount"
+					}
+				}
+			],
+			"sid": 898908629910409
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-image-loading-complete",
+					"objectClass": "System",
+					"sid": 736237800070772
+				}
+			],
+			"actions": [
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 657431721799860,
+					"parameters": {
+						"type": "log",
+						"message": "\"On Image loading Complete \"& tickcount"
+					}
+				}
+			],
+			"sid": 345307324600070
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-loader-layout-complete",
+					"objectClass": "System",
+					"sid": 557886405201936
+				}
+			],
+			"actions": [
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 339781787410943,
+					"parameters": {
+						"type": "log",
+						"message": "\"On Loader layout complete \" & tickcount"
+					}
+				}
+			],
+			"sid": 220471895609835
+		},
+		{
+			"eventType": "comment",
+			"text": "用于测试的异步函数"
+		},
+		{
+			"functionName": "AsyncFunction",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 241791146306809,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 853184101819924,
+							"parameters": {
+								"type": "log",
+								"message": "\"AsyncFunction1 Start \" & tickcount"
+							}
+						},
+						{
+							"callFunction": "AsyncFunction2",
+							"sid": 898597431579579
+						},
+						{
+							"id": "wait-for-previous-actions",
+							"objectClass": "System",
+							"sid": 715102500373121
+						},
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 289293687418138,
+							"parameters": {
+								"type": "log",
+								"message": "\"AsyncFunction1 End 等待一个结束 \" & tickcount"
+							}
+						},
+						{
+							"callFunction": "AsyncFunction2",
+							"sid": 142185383986356
+						},
+						{
+							"callFunction": "AsyncFunction2",
+							"sid": 328943610975074
+						},
+						{
+							"callFunction": "AsyncFunction2",
+							"sid": 445098385701859
+						},
+						{
+							"callFunction": "AsyncFunction2",
+							"sid": 501736570667596
+						},
+						{
+							"id": "wait-for-previous-actions",
+							"objectClass": "System",
+							"sid": 178217735213111
+						},
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 160240413551647,
+							"parameters": {
+								"type": "log",
+								"message": "\"AsyncFunction1 End 等待多个结束 \" & tickcount"
+							}
+						}
+					],
+					"sid": 789025768309615
+				}
+			]
+		},
+		{
+			"eventType": "comment",
+			"text": "用于测试的异步函数2"
+		},
+		{
+			"functionName": "AsyncFunction2",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": true,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 578699987078319,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 334007221992300,
+							"parameters": {
+								"type": "log",
+								"message": "\"AsyncFunction2 Start \" & tickcount"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 137178414842461,
+							"disabled": true,
+							"parameters": {
+								"seconds": "5"
+							}
+						},
+						{
+							"callFunction": "AsyncFunction3",
+							"sid": 853501522541886
+						},
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 306027127995656,
+							"parameters": {
+								"type": "log",
+								"message": "\"AsyncFunction2 End1 \" & tickcount"
+							}
+						},
+						{
+							"id": "wait-for-previous-actions",
+							"objectClass": "System",
+							"sid": 459449081187402
+						},
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 647854722098015,
+							"parameters": {
+								"type": "log",
+								"message": "\"AsyncFunction2 End2 \" & tickcount"
+							}
+						}
+					],
+					"sid": 995497837165780
+				}
+			]
+		},
+		{
+			"eventType": "comment",
+			"text": "用于测试的异步函数3"
+		},
+		{
+			"functionName": "AsyncFunction3",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": true,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 315313272998217,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 113383683454049,
+							"parameters": {
+								"type": "log",
+								"message": "\"AsyncFunction3 Start \" & tickcount"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 989694610359418,
+							"parameters": {
+								"seconds": "1.0"
+							}
+						},
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 473422302980993,
+							"parameters": {
+								"type": "log",
+								"message": "\"AsyncFunction3 End \" & tickcount"
+							}
+						}
+					],
+					"sid": 204333433360924
+				}
+			]
+		}
+	],
+	"sid": 604547148148299
+}

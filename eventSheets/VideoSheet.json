@@ -1,0 +1,92 @@
+{
+	"name": "VideoSheet",
+	"events": [
+		{
+			"eventType": "comment",
+			"text": "设置播放源"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 643755169970809,
+					"parameters": {
+						"key": 65
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-source-2",
+					"objectClass": "Video",
+					"sid": 326519762880376,
+					"parameters": {
+						"primary-source": "\"TestVideo.mp4\"",
+						"primary-format": "mp4-h264",
+						"secondary-source": "\"\"",
+						"secondary-format": "webm-vp9"
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Video",
+					"sid": 175776281781394
+				}
+			],
+			"sid": 776022405110279
+		},
+		{
+			"eventType": "comment",
+			"text": "暂停"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 388279212555812,
+					"parameters": {
+						"key": 83
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "pause",
+					"objectClass": "Video",
+					"sid": 531700575273701
+				}
+			],
+			"sid": 627524501249500
+		},
+		{
+			"eventType": "comment",
+			"text": "播放/继续"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 253314598239101,
+					"parameters": {
+						"key": 80
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Video",
+					"sid": 393831395125545
+				}
+			],
+			"sid": 895447300331000
+		}
+	],
+	"sid": 623773488963351
+}

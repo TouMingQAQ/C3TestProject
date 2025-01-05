@@ -1,0 +1,359 @@
+{
+	"name": "LocalStorageSheet",
+	"events": [
+		{
+			"eventType": "comment",
+			"text": "添加Key和Value"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 442106200290765,
+					"parameters": {
+						"key": 65
+					}
+				}
+			],
+			"actions": [],
+			"sid": 604753687965431,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-item",
+							"objectClass": "LocalStorage",
+							"sid": 518416131201756,
+							"parameters": {
+								"key": "\"A\"",
+								"value": "1231"
+							}
+						},
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 232132211289811,
+							"parameters": {
+								"type": "log",
+								"message": "\"[\"& tickcount &\"]LocalStorage SetItem A\""
+							}
+						},
+						{
+							"id": "set-item",
+							"objectClass": "LocalStorage",
+							"sid": 786608768111162,
+							"parameters": {
+								"key": "\"B\"",
+								"value": "22"
+							}
+						},
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 824645197208716,
+							"parameters": {
+								"type": "log",
+								"message": "\"[\"& tickcount &\"]LocalStorage SetItem B\""
+							}
+						}
+					],
+					"sid": 113423369054483
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-item",
+							"objectClass": "LocalStorage",
+							"sid": 501982370374590,
+							"parameters": {
+								"key": "\"C\"",
+								"value": "\"A\""
+							}
+						},
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 402997703836628,
+							"parameters": {
+								"type": "log",
+								"message": "\"[\"& tickcount &\"]LocalStorage SetItem C\""
+							}
+						},
+						{
+							"id": "set-item",
+							"objectClass": "LocalStorage",
+							"sid": 536987389923824,
+							"parameters": {
+								"key": "\"C\"",
+								"value": "\"AB\""
+							}
+						}
+					],
+					"sid": 538314776181322
+				}
+			]
+		},
+		{
+			"eventType": "comment",
+			"text": "根据Key获取Value"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 195123820063446,
+					"parameters": {
+						"key": 83
+					}
+				}
+			],
+			"actions": [],
+			"sid": 353377603221926,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "get-item",
+							"objectClass": "LocalStorage",
+							"sid": 690378834551101,
+							"parameters": {
+								"key": "\"A\""
+							}
+						},
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 641727867365759,
+							"parameters": {
+								"type": "log",
+								"message": "\"[\"& tickcount &\"]LocalStorage GetItem:\" & LocalStorage.ItemValue"
+							}
+						},
+						{
+							"id": "get-item",
+							"objectClass": "LocalStorage",
+							"sid": 114656680607101,
+							"parameters": {
+								"key": "\"C\""
+							}
+						}
+					],
+					"sid": 985931015747317
+				}
+			]
+		},
+		{
+			"eventType": "comment",
+			"text": "清空"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 753911609992646,
+					"parameters": {
+						"key": 67
+					}
+				}
+			],
+			"actions": [],
+			"sid": 859344990858486,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "clear-storage",
+							"objectClass": "LocalStorage",
+							"sid": 191923510928832
+						},
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 486724320056345,
+							"parameters": {
+								"type": "log",
+								"message": "\"LocalStorage Clear\""
+							}
+						}
+					],
+					"sid": 624775057729390
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-any-item-set",
+					"objectClass": "LocalStorage",
+					"sid": 574054371572515
+				}
+			],
+			"actions": [
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 568321178598192,
+					"parameters": {
+						"type": "log",
+						"message": "\"[\"& tickcount &\"]LocalStorage OnItemSet:\" & LocalStorage.Key & \"|\" & LocalStorage.ItemValue"
+					}
+				}
+			],
+			"sid": 474078939456219
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-item-set",
+					"objectClass": "LocalStorage",
+					"sid": 505994292505915,
+					"parameters": {
+						"key": "\"A\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 842233621191019,
+					"parameters": {
+						"type": "log",
+						"message": "\"[\"& tickcount &\"]LocalStorage OnItemSet2:\" & LocalStorage.Key & \"|\" & LocalStorage.ItemValue"
+					}
+				}
+			],
+			"sid": 533349746274425
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-any-item-get",
+					"objectClass": "LocalStorage",
+					"sid": 659077087681799
+				}
+			],
+			"actions": [
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 645930287910811,
+					"parameters": {
+						"type": "log",
+						"message": "\"[\"& tickcount &\"]LocalStorage OnItemGet:\" & LocalStorage.Key & \"|\" & LocalStorage.ItemValue"
+					}
+				}
+			],
+			"sid": 389000866084299
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-item-get",
+					"objectClass": "LocalStorage",
+					"sid": 599019510830934,
+					"parameters": {
+						"key": "\"A\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 474984709414564,
+					"parameters": {
+						"type": "log",
+						"message": "\"[\"& tickcount &\"]LocalStorage OnItemGet2:\" & LocalStorage.Key & \"|\" & LocalStorage.ItemValue"
+					}
+				}
+			],
+			"sid": 187996026922070
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-storage-cleared",
+					"objectClass": "LocalStorage",
+					"sid": 556120324448189
+				}
+			],
+			"actions": [
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 495244430012515,
+					"parameters": {
+						"type": "log",
+						"message": "\"LocalStorage OnClear\""
+					}
+				}
+			],
+			"sid": 909074829680366
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-all-gets-complete",
+					"objectClass": "LocalStorage",
+					"sid": 702290047941592
+				}
+			],
+			"actions": [
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 650538279647728,
+					"parameters": {
+						"type": "log",
+						"message": "\"[\"& tickcount &\"]LocalStorage OnAllGetsComplete\""
+					}
+				}
+			],
+			"sid": 513709317917988
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-all-sets-complete",
+					"objectClass": "LocalStorage",
+					"sid": 410348972641925
+				}
+			],
+			"actions": [
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 517251400735754,
+					"parameters": {
+						"type": "log",
+						"message": "\"[\"& tickcount &\"]LocalStorage OnAllSetsComplete\""
+					}
+				}
+			],
+			"sid": 858174970580581
+		}
+	],
+	"sid": 540151900746526
+}

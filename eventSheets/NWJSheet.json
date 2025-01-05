@@ -1,0 +1,234 @@
+{
+	"name": "NWJSheet",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 259346281065796,
+					"parameters": {
+						"key": 65
+					}
+				}
+			],
+			"actions": [],
+			"sid": 994622921594698,
+			"children": [
+				{
+					"eventType": "variable",
+					"name": "SavePath",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 348913027250210
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 209669466637904,
+							"parameters": {
+								"type": "log",
+								"message": "\"TestNWJS:\"& SavePath"
+							}
+						},
+						{
+							"id": "create-folder",
+							"objectClass": "NWjs",
+							"sid": 739410882923342,
+							"parameters": {
+								"path": "NWjs.UserFolder & \"Test.txt\""
+							}
+						},
+						{
+							"id": "show-open-dialog",
+							"objectClass": "NWjs",
+							"sid": 947399358495280,
+							"parameters": {
+								"accept": "\"*.\""
+							}
+						}
+					],
+					"sid": 397845059278291,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "path-exists",
+									"objectClass": "NWjs",
+									"sid": 747859949514393,
+									"parameters": {
+										"path": "\"G:\\Project\\H5\\Test\\Test.txt\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 694012139317127,
+									"parameters": {
+										"type": "log",
+										"message": "\"[1]找到路径\""
+									}
+								}
+							],
+							"sid": 917642897060299
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 479593438217440
+								}
+							],
+							"actions": [
+								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 427113744763802,
+									"parameters": {
+										"type": "log",
+										"message": "\"[1]未找到路径\""
+									}
+								}
+							],
+							"sid": 938991326979081
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "path-exists",
+									"objectClass": "NWjs",
+									"sid": 878100049671447,
+									"parameters": {
+										"path": "NWjs.UserFolder & \"/Test.txt\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 555373901353692,
+									"parameters": {
+										"type": "log",
+										"message": "\"[2]找到路径\""
+									}
+								}
+							],
+							"sid": 707477524792550
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 146269047980717
+								}
+							],
+							"actions": [
+								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 193419183932918,
+									"parameters": {
+										"type": "log",
+										"message": "\"[2]未找到路径\""
+									}
+								}
+							],
+							"sid": 484453770845415
+						}
+					]
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-file-system-error",
+					"objectClass": "NWjs",
+					"sid": 144234373255379
+				}
+			],
+			"actions": [
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 565135760645396,
+					"parameters": {
+						"type": "log",
+						"message": "\"FileError:\"&NWjs.FileError"
+					}
+				}
+			],
+			"sid": 992318279869466
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-binary-file-written",
+					"objectClass": "NWjs",
+					"sid": 448521098503771,
+					"parameters": {
+						"tag": "\"A\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 873861671075212,
+					"parameters": {
+						"type": "log",
+						"message": "\"NWjs write bin\""
+					}
+				}
+			],
+			"sid": 937713988255414
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 698867344495878,
+					"parameters": {
+						"key": 87
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "write-binary-file",
+					"objectClass": "NWjs",
+					"sid": 436464550842562,
+					"parameters": {
+						"tag": "\"A\"",
+						"path": "NWjs.UserFolder & \"Test/Test.txt\"",
+						"source": "BinaryData"
+					}
+				}
+			],
+			"sid": 193023007481189
+		}
+	],
+	"sid": 181184853899158
+}

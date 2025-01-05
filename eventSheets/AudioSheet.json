@@ -1,0 +1,255 @@
+{
+	"name": "AudioSheet",
+	"events": [
+		{
+			"eventType": "comment",
+			"text": "以Music播放音频(测试下来从哪播放无关系)"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 550345698126811,
+					"parameters": {
+						"key": 65
+					}
+				}
+			],
+			"actions": [],
+			"sid": 356968081633540,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "play-by-name",
+							"objectClass": "Audio",
+							"sid": 163812991096296,
+							"parameters": {
+								"folder": "music",
+								"audio-file-name": "\"amb_ophiu_destoyedrumble\"",
+								"loop": "not-looping",
+								"volume": "100",
+								"stereo-pan": "0",
+								"tag-optional": "\"TestMusic\""
+							}
+						}
+					],
+					"sid": 336533398721561
+				}
+			]
+		},
+		{
+			"eventType": "comment",
+			"text": "以Sounds播放音频(测试下来从哪播放无关系)"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 477123282868036,
+					"parameters": {
+						"key": 83
+					}
+				}
+			],
+			"actions": [],
+			"sid": 936362119043657,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "play-by-name",
+							"objectClass": "Audio",
+							"sid": 746182859749467,
+							"parameters": {
+								"folder": "sounds",
+								"audio-file-name": "\"amb_ophiu_destoyedrumble\"",
+								"loop": "not-looping",
+								"volume": "100",
+								"stereo-pan": "0",
+								"tag-optional": "\"TestMusic\""
+							}
+						}
+					],
+					"sid": 952402051017651
+				}
+			]
+		},
+		{
+			"eventType": "comment",
+			"text": "停止"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 530253982892938,
+					"parameters": {
+						"key": 80
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "stop",
+					"objectClass": "Audio",
+					"sid": 826745499721747,
+					"parameters": {
+						"tag": "\"TestMusic\""
+					}
+				}
+			],
+			"sid": 165238767687158
+		},
+		{
+			"eventType": "comment",
+			"text": "暂停"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 329178434526510,
+					"parameters": {
+						"key": 76
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-paused",
+					"objectClass": "Audio",
+					"sid": 807331266729886,
+					"parameters": {
+						"tag": "\"TestMusic\"",
+						"state": "pause"
+					}
+				}
+			],
+			"sid": 684692346835858
+		},
+		{
+			"eventType": "comment",
+			"text": "继续"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 762208805190528,
+					"parameters": {
+						"key": 77
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-paused",
+					"objectClass": "Audio",
+					"sid": 921715498187290,
+					"parameters": {
+						"tag": "\"TestMusic\"",
+						"state": "resume"
+					}
+				}
+			],
+			"sid": 300166545735843
+		},
+		{
+			"eventType": "comment",
+			"text": "FadeVolume"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 253303555538727,
+					"parameters": {
+						"key": 70
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "fade-volume",
+					"objectClass": "Audio",
+					"sid": 176720182311894,
+					"parameters": {
+						"tag": "\"TestMusic\"",
+						"db": "-100",
+						"duration": "2",
+						"ending": "stop"
+					}
+				}
+			],
+			"sid": 767129912039847
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-ended",
+					"objectClass": "Audio",
+					"sid": 106376679813958,
+					"parameters": {
+						"tag": "\"TestMusic\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 427312576558052,
+					"parameters": {
+						"type": "log",
+						"message": "\"Music OnEnd\""
+					}
+				}
+			],
+			"sid": 118934159244153
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-fade-ended",
+					"objectClass": "Audio",
+					"sid": 344116263233739,
+					"parameters": {
+						"tag": "\"TestMusic\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 156238067980490,
+					"parameters": {
+						"type": "log",
+						"message": "\"Music Fade OnEnd\""
+					}
+				}
+			],
+			"sid": 710978455049639
+		}
+	],
+	"sid": 872475555851725
+}

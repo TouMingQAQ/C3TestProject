@@ -1,0 +1,327 @@
+{
+	"name": "ArraySheet",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 504128706185955
+				}
+			],
+			"actions": [],
+			"sid": 591235934274910,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-at-xy",
+							"objectClass": "TestArray",
+							"sid": 429794522110589,
+							"parameters": {
+								"x": "2",
+								"y": "0",
+								"value": "123"
+							}
+						},
+						{
+							"id": "set-at-xyz",
+							"objectClass": "TestArray",
+							"sid": 697978898236706,
+							"parameters": {
+								"x": "1",
+								"y": "2",
+								"z": "1",
+								"value": "12"
+							}
+						},
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 637097681241053,
+							"parameters": {
+								"type": "log",
+								"message": "TestArray.AsJSON"
+							}
+						}
+					],
+					"sid": 468418657383815
+				}
+			]
+		},
+		{
+			"eventType": "comment",
+			"text": "推出一个数据，从后向前坐标1"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 664907698690224,
+					"parameters": {
+						"key": 80
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "push",
+					"objectClass": "TestArray",
+					"sid": 269914506165521,
+					"parameters": {
+						"where": "back",
+						"value": "1",
+						"axis": "x"
+					}
+				},
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 890861127929929,
+					"parameters": {
+						"type": "log",
+						"message": "TestArray.AsJSON"
+					}
+				}
+			],
+			"sid": 464462254737138
+		},
+		{
+			"eventType": "comment",
+			"text": "在X轴下标2插入数据"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 987569770462018,
+					"parameters": {
+						"key": 73
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "insert",
+					"objectClass": "TestArray",
+					"sid": 907239955463719,
+					"parameters": {
+						"value": "2",
+						"index": "0",
+						"axis": "x"
+					}
+				},
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 972401501882853,
+					"parameters": {
+						"type": "log",
+						"message": "TestArray.AsJSON"
+					}
+				}
+			],
+			"sid": 573617255484963
+		},
+		{
+			"eventType": "comment",
+			"text": "删除测试"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 474314892627418,
+					"parameters": {
+						"key": 68
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "delete",
+					"objectClass": "TestArray",
+					"sid": 925823608302187,
+					"parameters": {
+						"index": "0",
+						"axis": "y"
+					}
+				},
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 336183500812402,
+					"parameters": {
+						"type": "log",
+						"message": "TestArray.AsJSON"
+					}
+				}
+			],
+			"sid": 268773679209687
+		},
+		{
+			"eventType": "comment",
+			"text": "Foreach测试"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 284885409413575,
+					"parameters": {
+						"key": 70
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 603686456087787,
+					"parameters": {
+						"type": "log",
+						"message": "\"Foreach测试\""
+					}
+				}
+			],
+			"sid": 865439294987981,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 142740975989746,
+							"parameters": {
+								"type": "log",
+								"message": "\"Foreach测试 X\""
+							}
+						}
+					],
+					"sid": 335615957543571
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each-element",
+							"objectClass": "TestArray",
+							"sid": 316139511486659,
+							"parameters": {
+								"axes": "x"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 386636277908857,
+							"parameters": {
+								"type": "log",
+								"message": "TestArray.CurValue & \" | \" & TestArray.CurX & \" | \" & TestArray.CurY & \" | \" & TestArray.CurZ"
+							}
+						}
+					],
+					"sid": 365740969903369
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 486627037572120,
+							"parameters": {
+								"type": "log",
+								"message": "\"Foreach测试 XY\""
+							}
+						}
+					],
+					"sid": 124492532081467
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each-element",
+							"objectClass": "TestArray",
+							"sid": 137274745784107,
+							"parameters": {
+								"axes": "xy"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 922768181601457,
+							"parameters": {
+								"type": "log",
+								"message": "TestArray.CurValue  & \" | \" & TestArray.CurX & \" | \" & TestArray.CurY & \" | \" & TestArray.CurZ"
+							}
+						}
+					],
+					"sid": 611490808886428
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 771906507051333,
+							"parameters": {
+								"type": "log",
+								"message": "\"Foreach测试 XYZ\""
+							}
+						}
+					],
+					"sid": 668407584201571
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each-element",
+							"objectClass": "TestArray",
+							"sid": 904647213104878,
+							"parameters": {
+								"axes": "xyz"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 627640432696498,
+							"parameters": {
+								"type": "log",
+								"message": "TestArray.CurValue  & \" | \" & TestArray.CurX & \" | \" & TestArray.CurY & \" | \" & TestArray.CurZ"
+							}
+						}
+					],
+					"sid": 552789701076242
+				}
+			]
+		}
+	],
+	"sid": 750389085730068
+}

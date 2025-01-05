@@ -1,0 +1,406 @@
+{
+	"name": "OnlyOnceSheet",
+	"events": [
+		{
+			"eventType": "comment",
+			"text": "测试一般TriggerOnce"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 338381624974493,
+					"parameters": {
+						"key": 65
+					}
+				}
+			],
+			"actions": [],
+			"sid": 921576451777670,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 184534776485191
+						}
+					],
+					"actions": [
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 199732431885974,
+							"parameters": {
+								"type": "log",
+								"message": "\"TriggerOnce A:\" & tickcount"
+							}
+						}
+					],
+					"sid": 412854155240698
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 823366523979142
+						}
+					],
+					"actions": [
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 459333951333225,
+							"parameters": {
+								"type": "log",
+								"message": "\"No TriggerOnce A:\" & tickcount"
+							}
+						}
+					],
+					"sid": 905864493305418
+				}
+			]
+		},
+		{
+			"eventType": "comment",
+			"text": "EveryTick下的TriggerOnce"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 159327511520318
+				}
+			],
+			"actions": [],
+			"sid": 694209201312695,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 248068238579646
+						}
+					],
+					"actions": [
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 923203414953683,
+							"parameters": {
+								"type": "log",
+								"message": "\"TriggerOnce A:\" & tickcount"
+							}
+						}
+					],
+					"sid": 920525666843453
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 319645889546110
+						}
+					],
+					"actions": [
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 914444539793048,
+							"parameters": {
+								"type": "log",
+								"message": "\"No TriggerOnce A:\" & tickcount"
+							}
+						}
+					],
+					"sid": 105156588432588,
+					"disabled": true
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "pick-by-comparison",
+					"objectClass": "System",
+					"sid": 752936237541663,
+					"parameters": {
+						"object": "TestPickA",
+						"expression": "TestPickA.PickBool1",
+						"comparison": 0,
+						"value": "1"
+					}
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 336319501065751
+				}
+			],
+			"actions": [
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 737714899921046,
+					"parameters": {
+						"type": "log",
+						"message": "\"PickA :\" & TestPickA.PickBool1"
+					}
+				}
+			],
+			"sid": 334658128376328
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "else",
+					"objectClass": "System",
+					"sid": 330363367907160
+				}
+			],
+			"actions": [],
+			"sid": 879182078245618,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 682849075711864
+						}
+					],
+					"actions": [
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 644648356554385,
+							"parameters": {
+								"type": "log",
+								"message": "\"PickA Else\""
+							}
+						}
+					],
+					"sid": 583551637786379
+				}
+			]
+		},
+		{
+			"eventType": "comment",
+			"text": "创建一个对象"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 797259695889370,
+					"parameters": {
+						"key": 67
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 415253020389022,
+					"parameters": {
+						"object-to-create": "TestPickA",
+						"layer": "0",
+						"x": "0",
+						"y": "0",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
+				},
+				{
+					"id": "set-boolean-instvar",
+					"objectClass": "TestPickA",
+					"sid": 397948565661357,
+					"parameters": {
+						"instance-variable": "PickBool1",
+						"value": "true"
+					}
+				},
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 389425209761631,
+					"parameters": {
+						"type": "log",
+						"message": "\"CreatObjectA ACount:\" & TestPickA.Count"
+					}
+				}
+			],
+			"sid": 540508999674756
+		},
+		{
+			"eventType": "comment",
+			"text": "删除所有对象"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 426251786923120,
+					"parameters": {
+						"key": 68
+					}
+				}
+			],
+			"actions": [],
+			"sid": 758706931449252,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-comparison",
+							"objectClass": "System",
+							"sid": 576359390042457,
+							"parameters": {
+								"object": "TestPickA",
+								"expression": "TestPickA.PickBool1",
+								"comparison": 0,
+								"value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "TestPickA",
+							"sid": 277164496576862
+						},
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 771972259858361,
+							"parameters": {
+								"type": "log",
+								"message": "\"Destroy ACount:\" & TestPickA.Count"
+							}
+						}
+					],
+					"sid": 671179448279126
+				}
+			]
+		},
+		{
+			"functionName": "TestFunction",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 733006112550390,
+					"parameters": {
+						"type": "log",
+						"message": "\"TestFunction ——————\""
+					}
+				}
+			],
+			"sid": 575539075278800,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-comparison",
+							"objectClass": "System",
+							"sid": 761596402648434,
+							"parameters": {
+								"object": "TestPickA",
+								"expression": "TestPickA.PickBool1",
+								"comparison": 0,
+								"value": "1"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 516052935586517
+						}
+					],
+					"actions": [
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 846637735362766,
+							"parameters": {
+								"type": "log",
+								"message": "\"PickA :\" & TestPickA.PickBool1"
+							}
+						}
+					],
+					"sid": 589513636041147
+				}
+			]
+		},
+		{
+			"eventType": "comment",
+			"text": "多次函数调用，看TriggerOnce的情况"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 310601683589731,
+					"parameters": {
+						"key": 70
+					}
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "TestFunction",
+					"sid": 573213810754478
+				},
+				{
+					"callFunction": "TestFunction",
+					"sid": 586834212315465
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 956385538184696,
+					"parameters": {
+						"seconds": "0.02"
+					}
+				},
+				{
+					"callFunction": "TestFunction",
+					"sid": 788541565569974
+				}
+			],
+			"sid": 496866342975112
+		}
+	],
+	"sid": 735557529580058
+}

@@ -1,0 +1,241 @@
+{
+	"name": "DicSheet",
+	"events": [
+		{
+			"eventType": "comment",
+			"text": "初始化"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 881540539766118
+				}
+			],
+			"actions": [],
+			"sid": 713593491146563,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "load",
+							"objectClass": "Dictionary",
+							"sid": 843241543723160,
+							"parameters": {
+								"json": "\"{\"\"dic\"\":123}\""
+							}
+						},
+						{
+							"id": "add-key",
+							"objectClass": "Dictionary",
+							"sid": 796291063170989,
+							"parameters": {
+								"key": "\"A\"",
+								"value": "22"
+							}
+						},
+						{
+							"id": "add-key",
+							"objectClass": "Dictionary",
+							"sid": 372726240750003,
+							"parameters": {
+								"key": "\"B\"",
+								"value": "\"B\""
+							}
+						},
+						{
+							"id": "add-key",
+							"objectClass": "Dictionary",
+							"sid": 715268188219865,
+							"parameters": {
+								"key": "\"A.B.C\"",
+								"value": "\"ABC\""
+							}
+						},
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 495004770684966,
+							"parameters": {
+								"type": "log",
+								"message": "Dictionary.AsJSON"
+							}
+						}
+					],
+					"sid": 273299744970761
+				}
+			]
+		},
+		{
+			"eventType": "comment",
+			"text": "添加数据"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 547287686168385,
+					"parameters": {
+						"key": 65
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "add-key",
+					"objectClass": "Dictionary",
+					"sid": 110266304504750,
+					"parameters": {
+						"key": "\"B\"",
+						"value": "3"
+					}
+				},
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 980957733505989,
+					"parameters": {
+						"type": "log",
+						"message": "Dictionary.AsJSON"
+					}
+				}
+			],
+			"sid": 691882358577255
+		},
+		{
+			"eventType": "comment",
+			"text": "获取数据"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 431002219663829,
+					"parameters": {
+						"key": 71
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 668475001978347,
+					"parameters": {
+						"type": "log",
+						"message": "Dictionary.GetDefault(\"A\",\"a\")"
+					}
+				},
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 134286860303444,
+					"parameters": {
+						"type": "log",
+						"message": "Dictionary.GetDefault(\"a\",123)"
+					}
+				},
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 223417328136510,
+					"parameters": {
+						"type": "log",
+						"message": "Dictionary.Get(\"A\")"
+					}
+				},
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 668860019695265,
+					"parameters": {
+						"type": "log",
+						"message": "Dictionary.Get(\"a\")"
+					}
+				}
+			],
+			"sid": 330099322832699
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 423313777990533,
+					"parameters": {
+						"key": 68
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "delete-key",
+					"objectClass": "Dictionary",
+					"sid": 241076100861859,
+					"parameters": {
+						"key": "\"B\""
+					}
+				},
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 249068951499461,
+					"parameters": {
+						"type": "log",
+						"message": "Dictionary.AsJSON"
+					}
+				}
+			],
+			"sid": 175107152983043
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 752872218022938,
+					"parameters": {
+						"key": 70
+					}
+				}
+			],
+			"actions": [],
+			"sid": 945066674446570,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each-key",
+							"objectClass": "Dictionary",
+							"sid": 215114761654125
+						}
+					],
+					"actions": [
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 935423024816548,
+							"parameters": {
+								"type": "log",
+								"message": "Dictionary.CurrentKey & \"|\" & Dictionary.CurrentValue"
+							}
+						}
+					],
+					"sid": 326871881830833
+				}
+			]
+		}
+	],
+	"sid": 710551132034929
+}

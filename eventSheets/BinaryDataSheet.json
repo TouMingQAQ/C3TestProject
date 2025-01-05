@@ -1,0 +1,190 @@
+{
+	"name": "BinaryDataSheet",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 605541517620759,
+					"parameters": {
+						"key": 65
+					}
+				}
+			],
+			"actions": [],
+			"sid": 400034822657636,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-from-text",
+							"objectClass": "BinaryData",
+							"sid": 380041091877440,
+							"parameters": {
+								"value": "\"Hello world\""
+							}
+						},
+						{
+							"id": "set-from-text",
+							"objectClass": "BinaryData2",
+							"sid": 132636496402284,
+							"parameters": {
+								"value": "\"Hello\""
+							}
+						},
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 289021804086382,
+							"parameters": {
+								"type": "log",
+								"message": "BinaryData.ByteLength & \"|\" & BinaryData.Count"
+							}
+						},
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 474031344218066,
+							"parameters": {
+								"type": "log",
+								"message": "\"——————\""
+							}
+						},
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 774960845987903,
+							"parameters": {
+								"type": "log",
+								"message": "BinaryData.GetText(0,11)"
+							}
+						},
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 517473502172821,
+							"parameters": {
+								"type": "log",
+								"message": "\"——————\""
+							}
+						},
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 751653549638153,
+							"parameters": {
+								"type": "log",
+								"message": "BinaryData.GetText(0,13)"
+							}
+						},
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 858530340365053,
+							"parameters": {
+								"type": "log",
+								"message": "\"——————\""
+							}
+						},
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 233013935996738,
+							"parameters": {
+								"type": "log",
+								"message": "BinaryData.GetText(2,13)"
+							}
+						},
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 205510832941953,
+							"parameters": {
+								"type": "log",
+								"message": "\"——————\""
+							}
+						},
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 868678626367371,
+							"parameters": {
+								"type": "log",
+								"message": "BinaryData.GetText(1,11)"
+							}
+						},
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 901923852083156,
+							"parameters": {
+								"type": "log",
+								"message": "\"——————\""
+							}
+						},
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 303169267854970,
+							"parameters": {
+								"type": "log",
+								"message": "BinaryData.GetText(1,10)"
+							}
+						},
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 236979041541757,
+							"parameters": {
+								"type": "log",
+								"message": "\"——————\""
+							}
+						}
+					],
+					"sid": 498299610212436
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 411102602870071,
+					"parameters": {
+						"key": 83
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "copy",
+					"objectClass": "BinaryData2",
+					"sid": 537363074327321,
+					"parameters": {
+						"source": "BinaryData",
+						"start": "0",
+						"length": "2",
+						"target": "3"
+					}
+				},
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 402053454245646,
+					"parameters": {
+						"type": "log",
+						"message": "BinaryData2.GetText(0,BinaryData2.ByteLength)"
+					}
+				}
+			],
+			"sid": 929030166981981
+		}
+	],
+	"sid": 523020434985051
+}

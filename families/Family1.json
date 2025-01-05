@@ -1,0 +1,20 @@
+{
+	"name": "Family1",
+	"plugin-id": "Sprite",
+	"sid": 346738218275102,
+	"instanceVariables": [
+		{
+			"name": "FValue",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 325750644466759
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"TestPickB",
+		"TestPickA"
+	]
+}

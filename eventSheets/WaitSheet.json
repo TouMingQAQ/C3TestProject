@@ -1,0 +1,643 @@
+{
+	"name": "WaitSheet",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 996651251240809,
+					"parameters": {
+						"key": 87
+					}
+				}
+			],
+			"actions": [],
+			"sid": 679303427534582,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"callFunction": "AyncFunction",
+							"sid": 475878046375914
+						},
+						{
+							"callFunction": "AyncFunction",
+							"sid": 100564708691031
+						},
+						{
+							"callFunction": "AyncFunction",
+							"sid": 293655549038757
+						},
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 993598297220069,
+							"parameters": {
+								"type": "log",
+								"message": "\"TestWait1:\" & tickcount"
+							}
+						},
+						{
+							"callFunction": "AyncFunction",
+							"sid": 387985058745937
+						},
+						{
+							"callFunction": "AyncFunction",
+							"sid": 865442714628586
+						},
+						{
+							"callFunction": "AyncFunction",
+							"sid": 635471236536174
+						},
+						{
+							"id": "wait-for-previous-actions",
+							"objectClass": "System",
+							"sid": 401698109114792
+						},
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 790697577590094,
+							"parameters": {
+								"type": "log",
+								"message": "\"TestWait2:\" & tickcount"
+							}
+						}
+					],
+					"sid": 329322697409946
+				}
+			]
+		},
+		{
+			"eventType": "comment",
+			"text": "等待Tween"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 666909374118121,
+					"parameters": {
+						"key": 65
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 622241632261920,
+					"parameters": {
+						"type": "log",
+						"message": "\"Start Wait Tween\""
+					}
+				},
+				{
+					"id": "tween-value",
+					"objectClass": "Tween",
+					"sid": 341315970897694,
+					"behaviorType": "Tween",
+					"parameters": {
+						"tags": "\"TestTween\"",
+						"start-value": "0",
+						"end-value": "10",
+						"time": "1",
+						"ease": "noease",
+						"destroy-on-complete": "no",
+						"loop": "no",
+						"ping-pong": "no",
+						"repeat-count": "1"
+					}
+				},
+				{
+					"id": "wait-for-previous-actions",
+					"objectClass": "System",
+					"sid": 375177798045216
+				},
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 699341348562758,
+					"parameters": {
+						"type": "log",
+						"message": "\"End Wait Tween\""
+					}
+				}
+			],
+			"sid": 242472718139126
+		},
+		{
+			"eventType": "comment",
+			"text": "等待AsyncFunction和一个Tween"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 712000001652675,
+					"parameters": {
+						"key": 83
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 165316710457473,
+					"parameters": {
+						"type": "log",
+						"message": "\"Start Wait Async Function And Tween\""
+					}
+				},
+				{
+					"callFunction": "AyncFunction",
+					"sid": 891732117085454
+				},
+				{
+					"id": "tween-value",
+					"objectClass": "Tween",
+					"sid": 101238448001384,
+					"behaviorType": "Tween",
+					"parameters": {
+						"tags": "\"TestTween\"",
+						"start-value": "0",
+						"end-value": "10",
+						"time": "1",
+						"ease": "noease",
+						"destroy-on-complete": "no",
+						"loop": "no",
+						"ping-pong": "no",
+						"repeat-count": "1"
+					}
+				},
+				{
+					"id": "wait-for-previous-actions",
+					"objectClass": "System",
+					"sid": 926008763952696
+				},
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 250702853240725,
+					"parameters": {
+						"type": "log",
+						"message": "\"End Wait Async Function And Tween\""
+					}
+				}
+			],
+			"sid": 440992990146036
+		},
+		{
+			"eventType": "comment",
+			"text": "执行一个同步函数，并等待，同步函数内有异步函数调用但不等待"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 873188399824594,
+					"parameters": {
+						"key": 68
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 667001530527939,
+					"parameters": {
+						"type": "log",
+						"message": "\"Start Wait Function\""
+					}
+				},
+				{
+					"callFunction": "NormalFunctionNoWait",
+					"sid": 231980256132021
+				},
+				{
+					"id": "wait-for-previous-actions",
+					"objectClass": "System",
+					"sid": 585394766935231
+				},
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 332040195351932,
+					"parameters": {
+						"type": "log",
+						"message": "\"End Wait Function\""
+					}
+				}
+			],
+			"sid": 693314957355839
+		},
+		{
+			"eventType": "comment",
+			"text": "执行一个同步函数，并等待，同步函数内有异步函数和Tween调用但不等待"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 423782157056969,
+					"parameters": {
+						"key": 68
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 393862278977391,
+					"parameters": {
+						"type": "log",
+						"message": "\"Start Wait Function2\""
+					}
+				},
+				{
+					"callFunction": "NormalFunctionNoWait2",
+					"sid": 662702327957886
+				},
+				{
+					"id": "wait-for-previous-actions",
+					"objectClass": "System",
+					"sid": 751499213398187
+				},
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 612364457893986,
+					"parameters": {
+						"type": "log",
+						"message": "\"End Wait Function 2\""
+					}
+				}
+			],
+			"sid": 689263220115888
+		},
+		{
+			"eventType": "comment",
+			"text": "执行一个同步函数，并等待，同步函数内有异步函数和Tween调用且等待"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 917677520150803,
+					"parameters": {
+						"key": 70
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 120534143934115,
+					"parameters": {
+						"type": "log",
+						"message": "\"Start Wait Function 3\""
+					}
+				},
+				{
+					"callFunction": "NormalFunctionNoWait3",
+					"sid": 147142944837799
+				},
+				{
+					"id": "wait-for-previous-actions",
+					"objectClass": "System",
+					"sid": 818043922616101
+				},
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 530847129300301,
+					"parameters": {
+						"type": "log",
+						"message": "\"End Wait Function 3\""
+					}
+				}
+			],
+			"sid": 515856599077976
+		},
+		{
+			"functionName": "AyncFunction",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": true,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 202447009233001,
+					"parameters": {
+						"type": "log",
+						"message": "\"Start AsyncFunction\""
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 834514044163702,
+					"parameters": {
+						"seconds": "0.2"
+					}
+				},
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 949103141881995,
+					"parameters": {
+						"type": "log",
+						"message": "\"End AsyncFunction\""
+					}
+				}
+			],
+			"sid": 256169849312544
+		},
+		{
+			"eventType": "comment",
+			"text": "异步函数内等待一个异步函数和一个Tween并且"
+		},
+		{
+			"functionName": "AyncFunction2",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": true,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 894281409389530,
+					"parameters": {
+						"type": "log",
+						"message": "\"Start AsyncFunction 2\""
+					}
+				},
+				{
+					"callFunction": "AyncFunction",
+					"sid": 487905335818458
+				},
+				{
+					"id": "tween-value",
+					"objectClass": "Tween",
+					"sid": 623752290103994,
+					"behaviorType": "Tween",
+					"parameters": {
+						"tags": "\"TestTween\"",
+						"start-value": "0",
+						"end-value": "10",
+						"time": "1",
+						"ease": "noease",
+						"destroy-on-complete": "no",
+						"loop": "no",
+						"ping-pong": "no",
+						"repeat-count": "1"
+					}
+				},
+				{
+					"id": "wait-for-previous-actions",
+					"objectClass": "System",
+					"sid": 124475279283576
+				},
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 290721819873519,
+					"parameters": {
+						"type": "log",
+						"message": "\"End AsyncFunction 2\""
+					}
+				}
+			],
+			"sid": 494250680081219
+		},
+		{
+			"eventType": "comment",
+			"text": "异步函数内调用另一个异步函数但不等待"
+		},
+		{
+			"functionName": "AyncFunction3",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": true,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 601664415722959,
+					"parameters": {
+						"type": "log",
+						"message": "\"Start AsyncFunction 3\""
+					}
+				},
+				{
+					"callFunction": "AyncFunction2",
+					"sid": 271217790923142
+				},
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 283377767914268,
+					"parameters": {
+						"type": "log",
+						"message": "\"End AsyncFunction 3\""
+					}
+				}
+			],
+			"sid": 792716588369358
+		},
+		{
+			"eventType": "comment",
+			"text": "同步函数，调用异步函数，但无等待"
+		},
+		{
+			"functionName": "NormalFunctionNoWait",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 888454171122823,
+					"parameters": {
+						"type": "log",
+						"message": "\"Start NormalFunction\""
+					}
+				},
+				{
+					"callFunction": "AyncFunction",
+					"sid": 847259002909707
+				},
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 359316843519887,
+					"parameters": {
+						"type": "log",
+						"message": "\"End NormalFunction\""
+					}
+				}
+			],
+			"sid": 177591005859120
+		},
+		{
+			"eventType": "comment",
+			"text": "同步函数，调用异步函数和异步Tween，但无等待"
+		},
+		{
+			"functionName": "NormalFunctionNoWait2",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 843228286865246,
+					"parameters": {
+						"type": "log",
+						"message": "\"Start NormalFunction2\""
+					}
+				},
+				{
+					"id": "tween-value",
+					"objectClass": "Tween",
+					"sid": 705974892565733,
+					"behaviorType": "Tween",
+					"parameters": {
+						"tags": "\"TestTween\"",
+						"start-value": "0",
+						"end-value": "10",
+						"time": "1",
+						"ease": "noease",
+						"destroy-on-complete": "no",
+						"loop": "no",
+						"ping-pong": "no",
+						"repeat-count": "1"
+					}
+				},
+				{
+					"callFunction": "AyncFunction",
+					"sid": 757921714314994
+				},
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 387646405570385,
+					"parameters": {
+						"type": "log",
+						"message": "\"End NormalFunction2\""
+					}
+				}
+			],
+			"sid": 976451921782944
+		},
+		{
+			"eventType": "comment",
+			"text": "同步函数，调用异步函数和异步Tween，有等待"
+		},
+		{
+			"functionName": "NormalFunctionNoWait3",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 511306296686434,
+					"parameters": {
+						"type": "log",
+						"message": "\"Start NormalFunction2\""
+					}
+				},
+				{
+					"id": "tween-value",
+					"objectClass": "Tween",
+					"sid": 280889808338351,
+					"behaviorType": "Tween",
+					"parameters": {
+						"tags": "\"TestTween\"",
+						"start-value": "0",
+						"end-value": "10",
+						"time": "1",
+						"ease": "noease",
+						"destroy-on-complete": "no",
+						"loop": "no",
+						"ping-pong": "no",
+						"repeat-count": "1"
+					}
+				},
+				{
+					"callFunction": "AyncFunction",
+					"sid": 476198568629361
+				},
+				{
+					"id": "wait-for-previous-actions",
+					"objectClass": "System",
+					"sid": 738653981297307
+				},
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 145403474082127,
+					"parameters": {
+						"type": "log",
+						"message": "\"End NormalFunction2\""
+					}
+				}
+			],
+			"sid": 411070331856252
+		}
+	],
+	"sid": 653262425747621
+}

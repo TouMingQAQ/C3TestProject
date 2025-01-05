@@ -1,0 +1,349 @@
+{
+	"name": "JsonSheet",
+	"events": [
+		{
+			"eventType": "comment",
+			"text": "给指定数据增加数值"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 806781198714412,
+					"parameters": {
+						"key": 65
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 569828396805708,
+					"parameters": {
+						"type": "log",
+						"message": "JSON.ToBeautifiedString"
+					}
+				},
+				{
+					"id": "add-to",
+					"objectClass": "JSON",
+					"sid": 163686298458867,
+					"parameters": {
+						"path": "\"C\"",
+						"value": "11"
+					}
+				},
+				{
+					"id": "add-to",
+					"objectClass": "JSON",
+					"sid": 789255218894491,
+					"parameters": {
+						"path": "\"A\"",
+						"value": "3"
+					}
+				},
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 934424834798070,
+					"parameters": {
+						"type": "log",
+						"message": "JSON.ToBeautifiedString"
+					}
+				}
+			],
+			"sid": 523453481771272
+		},
+		{
+			"eventType": "comment",
+			"text": "根据JsonPath设置指定值"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 305315466127083,
+					"parameters": {
+						"key": 83
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 311516441160959,
+					"parameters": {
+						"type": "log",
+						"message": "JSON.ToBeautifiedString"
+					}
+				},
+				{
+					"id": "set-value",
+					"objectClass": "JSON",
+					"sid": 555713428733668,
+					"parameters": {
+						"path": "\"B\"",
+						"value": "\"B\""
+					}
+				},
+				{
+					"id": "set-value",
+					"objectClass": "JSON",
+					"sid": 401354034781493,
+					"parameters": {
+						"path": "\"C\"",
+						"value": "42"
+					}
+				},
+				{
+					"id": "set-value",
+					"objectClass": "JSON",
+					"sid": 677752711414422,
+					"parameters": {
+						"path": "\"A.B.C\"",
+						"value": "41"
+					}
+				},
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 101143826935273,
+					"parameters": {
+						"type": "log",
+						"message": "JSON.ToBeautifiedString"
+					}
+				},
+				{
+					"id": "set-value",
+					"objectClass": "JSON",
+					"sid": 426881548210701,
+					"parameters": {
+						"path": "\"A.B\"",
+						"value": "22"
+					}
+				},
+				{
+					"id": "set-value",
+					"objectClass": "JSON",
+					"sid": 846244761700818,
+					"parameters": {
+						"path": "\"A.C.D\"",
+						"value": "11"
+					}
+				},
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 314575335963078,
+					"parameters": {
+						"type": "log",
+						"message": "JSON.ToBeautifiedString"
+					}
+				}
+			],
+			"sid": 261431013187023
+		},
+		{
+			"eventType": "comment",
+			"text": "根据JsonPath删除指定路径"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 948491439733102,
+					"parameters": {
+						"key": 68
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 686246695900821,
+					"parameters": {
+						"type": "log",
+						"message": "JSON.ToBeautifiedString"
+					}
+				},
+				{
+					"id": "delete-key",
+					"objectClass": "JSON",
+					"sid": 286362096367415,
+					"parameters": {
+						"path": "\"A.B.C\""
+					}
+				},
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 485892961871267,
+					"parameters": {
+						"type": "log",
+						"message": "JSON.ToBeautifiedString"
+					}
+				},
+				{
+					"id": "delete-key",
+					"objectClass": "JSON",
+					"sid": 498845816372939,
+					"parameters": {
+						"path": "\"A.B\""
+					}
+				},
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 880054427124288,
+					"parameters": {
+						"type": "log",
+						"message": "JSON.ToBeautifiedString"
+					}
+				}
+			],
+			"sid": 570186147684823
+		},
+		{
+			"eventType": "comment",
+			"text": "根据JsonPath修改指定Array的大小，默认值为0"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 651011197749973,
+					"parameters": {
+						"key": 81
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 412810215560954,
+					"parameters": {
+						"type": "log",
+						"message": "JSON.ToBeautifiedString"
+					}
+				},
+				{
+					"id": "set-array",
+					"objectClass": "JSON",
+					"sid": 691796107402616,
+					"parameters": {
+						"path": "\"A.B.C\"",
+						"size": "5"
+					}
+				},
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 317454024230604,
+					"parameters": {
+						"type": "log",
+						"message": "JSON.ToBeautifiedString"
+					}
+				},
+				{
+					"id": "set-array",
+					"objectClass": "JSON",
+					"sid": 684941434397021,
+					"parameters": {
+						"path": "\"A.C\"",
+						"size": "5"
+					}
+				},
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 605164250787561,
+					"parameters": {
+						"type": "log",
+						"message": "JSON.ToBeautifiedString"
+					}
+				}
+			],
+			"sid": 915658174361004
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 247730678276863,
+					"parameters": {
+						"key": 70
+					}
+				}
+			],
+			"actions": [],
+			"sid": 551552941510294,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each",
+							"objectClass": "JSON",
+							"sid": 329647377503807,
+							"parameters": {
+								"path": "\"\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 980368356666257,
+							"parameters": {
+								"type": "log",
+								"message": "JSON.CurrentKey & \"|\" & JSON.CurrentValue & \"|\" & JSON.CurrentType"
+							}
+						}
+					],
+					"sid": 464906999701630
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each",
+							"objectClass": "JSON",
+							"sid": 535314260951581,
+							"parameters": {
+								"path": "\"A.C\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 837419573811387,
+							"parameters": {
+								"type": "log",
+								"message": "JSON.CurrentKey & \"|\" & JSON.CurrentValue & \"|\" & JSON.CurrentType"
+							}
+						}
+					],
+					"sid": 507800569231978
+				}
+			]
+		}
+	],
+	"sid": 477994965403729
+}

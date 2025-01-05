@@ -1,0 +1,272 @@
+{
+	"name": "GroupSheet",
+	"events": [
+		{
+			"eventType": "group",
+			"disabled": true,
+			"title": "TestGroup_1",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"functionName": "TestFunction_1",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 869824928500838,
+							"parameters": {
+								"type": "log",
+								"message": "\"TestFunction_1\""
+							}
+						}
+					],
+					"sid": 574402114721263,
+					"disabled": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 378942779219973
+						}
+					],
+					"actions": [
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 554729673509101,
+							"parameters": {
+								"type": "log",
+								"message": "\"Group_1 Open\""
+							}
+						}
+					],
+					"sid": 131803668201290
+				}
+			],
+			"sid": 416738693910726
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "TestGroup_2",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"functionName": "TestFunction_2",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 262475519556567,
+							"parameters": {
+								"type": "log",
+								"message": "\"TestFunction_2\""
+							}
+						}
+					],
+					"sid": 792747457266188
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 459212757051985
+						}
+					],
+					"actions": [
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 117835328595353,
+							"parameters": {
+								"type": "log",
+								"message": "\"Group_2 Open\""
+							}
+						}
+					],
+					"sid": 126169390785172
+				}
+			],
+			"sid": 998840776063732
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 222414494662245,
+					"parameters": {
+						"key": 65
+					}
+				}
+			],
+			"actions": [],
+			"sid": 227176218805282,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 125973339284808,
+							"parameters": {
+								"type": "log",
+								"message": "\"Test Use Disable Group Function1\""
+							}
+						},
+						{
+							"callFunction": "TestFunction_1",
+							"sid": 936523835843464
+						}
+					],
+					"sid": 122612594230425
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 208871137055620,
+							"parameters": {
+								"type": "log",
+								"message": "\"Test Use Active Group Function2\""
+							}
+						},
+						{
+							"callFunction": "TestFunction_2",
+							"sid": 374053788001073
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 434323784628954,
+							"parameters": {
+								"group-name": "\"TestGroup_2\"",
+								"state": "deactivated"
+							}
+						},
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 589154649276107,
+							"parameters": {
+								"type": "log",
+								"message": "\"Test Use Disable Group Function2\""
+							}
+						},
+						{
+							"callFunction": "TestFunction_2",
+							"sid": 666188402531705
+						}
+					],
+					"sid": 452126481947730
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 562931304209462,
+							"parameters": {
+								"type": "log",
+								"message": "\"Active Group 1\""
+							}
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 461962091089256,
+							"parameters": {
+								"group-name": "\"TestGroup_1\"",
+								"state": "activated"
+							}
+						},
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 126658258968995,
+							"parameters": {
+								"type": "log",
+								"message": "\"Test Use Active Group Function1\""
+							}
+						},
+						{
+							"callFunction": "TestFunction_1",
+							"sid": 399465009489464
+						}
+					],
+					"sid": 303785974929553
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 600425744218621,
+							"parameters": {
+								"type": "log",
+								"message": "\"Active Group 2\""
+							}
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 318235205417413,
+							"parameters": {
+								"group-name": "\"TestGroup_2\"",
+								"state": "activated"
+							}
+						},
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 971593662157595,
+							"parameters": {
+								"type": "log",
+								"message": "\"Test Use Active Group Function2\""
+							}
+						},
+						{
+							"callFunction": "TestFunction_2",
+							"sid": 270812070839433
+						}
+					],
+					"sid": 589744598049448
+				}
+			]
+		}
+	],
+	"sid": 729496325379985
+}

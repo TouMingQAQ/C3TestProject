@@ -1,0 +1,54 @@
+{
+	"name": "TestPickA",
+	"plugin-id": "Sprite",
+	"sid": 651719217993397,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "PickBool1",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 972683227902689
+		},
+		{
+			"name": "PickValue1",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 521231045203489
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 250,
+						"height": 250,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 8627937,
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 488786088196261,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

@@ -1,0 +1,135 @@
+{
+	"name": "CollisionSheet",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "OnCollision",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 225586172048930
+		},
+		{
+			"eventType": "comment",
+			"text": "重置目标状态和坐标"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 855079896910605,
+					"parameters": {
+						"key": 67
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 638845435969935,
+					"parameters": {
+						"variable": "OnCollision",
+						"value": "false"
+					}
+				},
+				{
+					"id": "set-y",
+					"objectClass": "CollisionObject",
+					"sid": 371676937443083,
+					"parameters": {
+						"y": "CollisionObject.Y -1"
+					}
+				}
+			],
+			"sid": 511321811998476
+		},
+		{
+			"eventType": "comment",
+			"text": "未碰撞前记录每一帧目标的坐标"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 187009928271757
+				}
+			],
+			"actions": [],
+			"sid": 122596800434067,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 950462671833446,
+							"parameters": {
+								"variable": "OnCollision"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 431394179449999,
+							"parameters": {
+								"type": "log",
+								"message": "\"[\"& tickcount &\"]Obj Y:\" & CollisionObject.Y"
+							}
+						}
+					],
+					"sid": 783495183349895
+				}
+			]
+		},
+		{
+			"eventType": "comment",
+			"text": "发生碰撞时"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "CollisionObject",
+					"sid": 219028114581585,
+					"parameters": {
+						"object": "Plant"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 649487046220033,
+					"parameters": {
+						"variable": "OnCollision",
+						"value": "true"
+					}
+				},
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 948809847089394,
+					"parameters": {
+						"type": "log",
+						"message": "\"[\"& tickcount &\"]ObjOnCollision Y:\" & CollisionObject.Y"
+					}
+				}
+			],
+			"sid": 368642740536451
+		}
+	],
+	"sid": 447481691288581
+}

@@ -1,0 +1,119 @@
+{
+	"name": "FadeSheet",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 279006336959171,
+					"parameters": {
+						"key": 83
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "start-fade",
+					"objectClass": "FadeSprite",
+					"sid": 604518290146150,
+					"behaviorType": "Fade"
+				}
+			],
+			"sid": 830239055064208
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 575285954166032,
+					"parameters": {
+						"key": 82
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "restart-fade",
+					"objectClass": "FadeSprite",
+					"sid": 582603495546078,
+					"behaviorType": "Fade"
+				}
+			],
+			"sid": 258823092417049
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-fade-in-finished",
+					"objectClass": "FadeSprite",
+					"sid": 949471506525376,
+					"behaviorType": "Fade"
+				}
+			],
+			"actions": [
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 221618734058855,
+					"parameters": {
+						"type": "log",
+						"message": "\"Fade in finished\""
+					}
+				}
+			],
+			"sid": 899513797270021
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-fade-out-finished",
+					"objectClass": "FadeSprite",
+					"sid": 599877448875351,
+					"behaviorType": "Fade"
+				}
+			],
+			"actions": [
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 215926154820921,
+					"parameters": {
+						"type": "log",
+						"message": "\"Fade out finished\""
+					}
+				}
+			],
+			"sid": 792723720840131
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-wait-finished",
+					"objectClass": "FadeSprite",
+					"sid": 569790097397575,
+					"behaviorType": "Fade"
+				}
+			],
+			"actions": [
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 467820762401712,
+					"parameters": {
+						"type": "log",
+						"message": "\"Fade wait finished\""
+					}
+				}
+			],
+			"sid": 542558236064360
+		}
+	],
+	"sid": 890681354297139
+}
