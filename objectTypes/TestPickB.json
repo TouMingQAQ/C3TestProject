@@ -21,9 +21,14 @@
 	],
 	"behaviorTypes": [
 		{
-			"behaviorId": "Persist",
-			"name": "Persist",
-			"sid": 815435729877375
+			"behaviorId": "Sin",
+			"name": "正弦运动",
+			"sid": 583662180187131
+		},
+		{
+			"behaviorId": "scrollto",
+			"name": "镜头跟随",
+			"sid": 927129542726659
 		}
 	],
 	"effectTypes": [],

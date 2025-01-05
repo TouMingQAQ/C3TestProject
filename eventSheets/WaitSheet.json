@@ -198,53 +198,6 @@
 		},
 		{
 			"eventType": "comment",
-			"text": "异步函数内调用另一个异步函数但不等待"
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-key-pressed",
-					"objectClass": "Keyboard",
-					"sid": 747774027009705,
-					"parameters": {
-						"key": 71
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "log",
-					"objectClass": "Browser",
-					"sid": 974853161657096,
-					"parameters": {
-						"type": "log",
-						"message": "\"Start Wait Async Function 3 and 2\""
-					}
-				},
-				{
-					"callFunction": "AyncFunction3",
-					"sid": 664092306078213
-				},
-				{
-					"id": "wait-for-previous-actions",
-					"objectClass": "System",
-					"sid": 492217735852095
-				},
-				{
-					"id": "log",
-					"objectClass": "Browser",
-					"sid": 936578913912790,
-					"parameters": {
-						"type": "log",
-						"message": "\"End Wait Async Function 3 and 2\""
-					}
-				}
-			],
-			"sid": 631746497353553
-		},
-		{
-			"eventType": "comment",
 			"text": "执行一个同步函数，并等待，同步函数内有异步函数调用但不等待"
 		},
 		{
@@ -407,9 +360,9 @@
 				{
 					"id": "wait",
 					"objectClass": "System",
-					"sid": 604808512873760,
+					"sid": 834514044163702,
 					"parameters": {
-						"seconds": "2"
+						"seconds": "0.2"
 					}
 				},
 				{

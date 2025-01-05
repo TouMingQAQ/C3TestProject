@@ -1,0 +1,205 @@
+{
+	"name": "LayerSheet",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 379132076800953,
+					"parameters": {
+						"key": 65
+					}
+				}
+			],
+			"actions": [],
+			"sid": 643128650862611,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 329562105081973,
+							"parameters": {
+								"type": "log",
+								"message": "\"Layer1:\" & LayerScale(\"TestLayer1\") & \"  |  Layer2:\" & LayerScale(\"TestLayer2\")"
+							}
+						},
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 914900990819408,
+							"parameters": {
+								"type": "log",
+								"message": "\"Layer1:\" & LayerIndex(\"TestLayer1\") & \"  |  Layer2:\" & LayerIndex(\"TestLayer2\")"
+							}
+						},
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 993267452399438,
+							"parameters": {
+								"type": "log",
+								"message": "\"Layer1:\" & LayerOpacity(\"TestLayer1\") & \"  |  Layer2:\" & LayerOpacity(\"TestLayer2\")"
+							}
+						},
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 431930683437569,
+							"parameters": {
+								"type": "log",
+								"message": "\"Layer1:\" & LayerParallaxX(\"TestLayer1\") & \"  |  Layer2:\" & LayerParallaxX(\"TestLayer2\")"
+							}
+						}
+					],
+					"sid": 405480990623000
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 757036372463658
+				}
+			],
+			"actions": [
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 979458024684419,
+					"parameters": {
+						"object-to-create": "TestObject",
+						"layer": "1",
+						"x": "300",
+						"y": "300",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
+				},
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 556373542332922,
+					"parameters": {
+						"object-to-create": "TestObject",
+						"layer": "2",
+						"x": "300",
+						"y": "300",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
+				}
+			],
+			"sid": 504543461946764
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 552871776890933
+				}
+			],
+			"actions": [],
+			"sid": 974343712203306,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 903975314398838,
+							"parameters": {
+								"type": "log",
+								"message": "\"————————\""
+							}
+						},
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 715127789865218,
+							"parameters": {
+								"type": "log",
+								"message": "\"————————\""
+							}
+						},
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 441385764413449,
+							"parameters": {
+								"type": "log",
+								"message": "\"Layer1:\" & LayerParallaxX(1)  & \" | \" & \"Layer3:\" & LayerParallaxX(2)"
+							}
+						}
+					],
+					"sid": 544369142635904,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for-each",
+									"objectClass": "System",
+									"sid": 674440570111144,
+									"parameters": {
+										"object": "TestObject"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 711140577927123,
+									"parameters": {
+										"type": "log",
+										"message": "TestObject.X & \",\" & TestObject.Y"
+									}
+								}
+							],
+							"sid": 198576561100046
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 443619289975334,
+							"parameters": {
+								"type": "log",
+								"message": "\"————————\""
+							}
+						},
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 351475689584877,
+							"parameters": {
+								"type": "log",
+								"message": "\"————————\""
+							}
+						}
+					],
+					"sid": 851169989702311
+				}
+			]
+		}
+	],
+	"sid": 102716947310395
+}
