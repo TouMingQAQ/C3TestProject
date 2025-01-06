@@ -1,0 +1,31 @@
+{
+	"name": "SkymenTrailSheet",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 107893392449414
+				}
+			],
+			"actions": [
+				{
+					"id": "attach",
+					"objectClass": "SkymenTrail",
+					"sid": 232034753365900,
+					"behaviorType": "TrailRenderer",
+					"parameters": {
+						"object": "SineObject",
+						"angle-towards-new-position": false,
+						"image-point": "0",
+						"destroy-with-parent": false
+					}
+				}
+			],
+			"sid": 943540744595133
+		}
+	],
+	"sid": 458126342310804
+}

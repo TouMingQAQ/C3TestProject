@@ -176,6 +176,14 @@
 		},
 		{
 			"type": "behavior",
+			"id": "skymenTrail",
+			"name": "Trail Renderer",
+			"author": "skymen",
+			"bundled": false,
+			"version": "1.0.2.1"
+		},
+		{
+			"type": "behavior",
 			"id": "solid",
 			"name": "Solid",
 			"author": "Scirra",
@@ -207,7 +215,8 @@
 			"MoveToObject",
 			"AdvancedRandom",
 			"OrbitObject",
-			"SineObject"
+			"SineObject",
+			"SkymenTrail"
 		],
 		"subfolders": [
 			{
@@ -262,7 +271,8 @@
 			"AdvancedRandom",
 			"Layer",
 			"Orbit",
-			"Control"
+			"Control",
+			"SkymenTrail"
 		],
 		"subfolders": [
 			{
@@ -295,7 +305,8 @@
 			"AdvancedRandomSheet",
 			"LayerSheet",
 			"OrbitSheet",
-			"ControlSheet"
+			"ControlSheet",
+			"SkymenTrailSheet"
 		],
 		"subfolders": [
 			{

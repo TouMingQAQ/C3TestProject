@@ -75,7 +75,7 @@
 							"transformSX": 0,
 							"transformSY": 0,
 							"transformO": 0,
-							"previewSceneGraph": true
+							"previewSceneGraph": false
 						}
 					},
 					"instanceFolderItem": {
@@ -204,7 +204,7 @@
 							"transformSX": 0,
 							"transformSY": 0,
 							"transformO": 1,
-							"previewSceneGraph": true
+							"previewSceneGraph": false
 						}
 					},
 					"instanceFolderItem": {
