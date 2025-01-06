@@ -1,21 +1,10 @@
 {
-	"name": "MovePlantform",
+	"name": "UI",
 	"plugin-id": "Sprite",
-	"sid": 334818901524068,
+	"sid": 831166061196533,
 	"isGlobal": false,
 	"instanceVariables": [],
-	"behaviorTypes": [
-		{
-			"behaviorId": "Sin",
-			"name": "Sine",
-			"sid": 959007717707854
-		},
-		{
-			"behaviorId": "solid",
-			"name": "Solid",
-			"sid": 341913619874224
-		}
-	],
+	"behaviorTypes": [],
 	"effectTypes": [],
 	"animations": {
 		"items": [
@@ -30,13 +19,13 @@
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
 						"fileType": "image/png",
-						"imageSpriteId": 297295,
+						"imageSpriteId": 3706854,
 						"useCollisionPoly": true,
 						"duration": 1,
 						"tag": ""
 					}
 				],
-				"sid": 241821158239309,
+				"sid": 700614598942330,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,
