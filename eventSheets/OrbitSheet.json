@@ -113,6 +113,79 @@
 				}
 			],
 			"sid": 291551739534984
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 315476013059981,
+					"parameters": {
+						"key": 76
+					}
+				}
+			],
+			"actions": [],
+			"sid": 397494852629699,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 556623720722226,
+							"parameters": {
+								"type": "log",
+								"message": "\"PrimaryRadius:\" & OrbitObject.Orbit.PrimaryRadius & \" | SecondaryRadius:\" & OrbitObject.Orbit.SecondaryRadius"
+							}
+						},
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 533552346388674,
+							"parameters": {
+								"type": "log",
+								"message": "\"OffsetAngle :\" & OrbitObject.Orbit.OffsetAngle & \" | Rotation:\" & OrbitObject.Orbit.Rotation"
+							}
+						},
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 726325681924346,
+							"parameters": {
+								"type": "log",
+								"message": "\"Acceleration:\" & OrbitObject.Orbit.Acceleration& \" | Speed:\" & OrbitObject.Orbit.Speed"
+							}
+						}
+					],
+					"sid": 774087202918848
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 100143435244926
+				}
+			],
+			"actions": [
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 652760283522864,
+					"parameters": {
+						"type": "log",
+						"message": "\"Rotation:\" & OrbitObject.Orbit.Rotation"
+					}
+				}
+			],
+			"sid": 729186294066190
 		}
 	],
 	"sid": 596047206354429
