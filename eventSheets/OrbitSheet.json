@@ -1,0 +1,119 @@
+{
+	"name": "OrbitSheet",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 263458843941562,
+					"parameters": {
+						"key": 90
+					}
+				}
+			],
+			"actions": [],
+			"sid": 786236192102525,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "pin",
+							"objectClass": "OrbitObject",
+							"sid": 847417782443541,
+							"behaviorType": "Orbit",
+							"parameters": {
+								"target": "SineObject"
+							}
+						}
+					],
+					"sid": 231002350918489
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 466161362487630,
+					"parameters": {
+						"key": 88
+					}
+				}
+			],
+			"actions": [],
+			"sid": 193787966433542,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "unpin",
+							"objectClass": "OrbitObject",
+							"sid": 304157145212059,
+							"behaviorType": "Orbit"
+						}
+					],
+					"sid": 658030812558125
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "key-is-down",
+					"objectClass": "Keyboard",
+					"sid": 843874653923387,
+					"parameters": {
+						"key": 65
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-offset-angle",
+					"objectClass": "OrbitObject",
+					"sid": 570573945680900,
+					"behaviorType": "Orbit",
+					"parameters": {
+						"angle": "20"
+					}
+				}
+			],
+			"sid": 608164538528613
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "key-is-down",
+					"objectClass": "Keyboard",
+					"sid": 856866260834666,
+					"parameters": {
+						"key": 83
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-speed",
+					"objectClass": "OrbitObject",
+					"sid": 114335787955048,
+					"behaviorType": "Orbit",
+					"parameters": {
+						"speed": "100"
+					}
+				}
+			],
+			"sid": 291551739534984
+		}
+	],
+	"sid": 596047206354429
+}

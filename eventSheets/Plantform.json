@@ -1,0 +1,130 @@
+{
+	"name": "Plantform",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "key-is-down",
+					"objectClass": "Keyboard",
+					"sid": 856424046149578,
+					"parameters": {
+						"key": 65
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-vector-x",
+					"objectClass": "Character",
+					"sid": 231636451964409,
+					"behaviorType": "Platform",
+					"parameters": {
+						"vector-x": "-200"
+					}
+				}
+			],
+			"sid": 871807544560803
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "else",
+					"objectClass": "System",
+					"sid": 605598502161978
+				},
+				{
+					"id": "key-is-down",
+					"objectClass": "Keyboard",
+					"sid": 479872534063087,
+					"parameters": {
+						"key": 68
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-vector-x",
+					"objectClass": "Character",
+					"sid": 554341436863274,
+					"behaviorType": "Platform",
+					"parameters": {
+						"vector-x": "200"
+					}
+				}
+			],
+			"sid": 812373389006896
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "else",
+					"objectClass": "System",
+					"sid": 740255956527144
+				}
+			],
+			"actions": [
+				{
+					"id": "set-vector-x",
+					"objectClass": "Character",
+					"sid": 552071865184044,
+					"behaviorType": "Platform",
+					"parameters": {
+						"vector-x": "0"
+					}
+				}
+			],
+			"sid": 150708935114517
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 725010644357296,
+					"parameters": {
+						"key": 32
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "simulate-control",
+					"objectClass": "Character",
+					"sid": 817375159716526,
+					"behaviorType": "Platform",
+					"parameters": {
+						"control": "jump"
+					}
+				}
+			],
+			"sid": 615887833964362
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 898032836396147,
+					"parameters": {
+						"key": 83
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "fall-through",
+					"objectClass": "Character",
+					"sid": 527738909616158,
+					"behaviorType": "Platform"
+				}
+			],
+			"sid": 525226523281330
+		}
+	],
+	"sid": 864303808629754
+}

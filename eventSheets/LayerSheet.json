@@ -23,15 +23,6 @@
 						{
 							"id": "log",
 							"objectClass": "Browser",
-							"sid": 329562105081973,
-							"parameters": {
-								"type": "log",
-								"message": "\"Layer1:\" & LayerScale(\"TestLayer1\") & \"  |  Layer2:\" & LayerScale(\"TestLayer2\")"
-							}
-						},
-						{
-							"id": "log",
-							"objectClass": "Browser",
 							"sid": 914900990819408,
 							"parameters": {
 								"type": "log",
@@ -137,10 +128,10 @@
 						{
 							"id": "log",
 							"objectClass": "Browser",
-							"sid": 441385764413449,
+							"sid": 262660840182736,
 							"parameters": {
 								"type": "log",
-								"message": "\"Layer1:\" & LayerParallaxX(1)  & \" | \" & \"Layer3:\" & LayerParallaxX(2)"
+								"message": "\"Layer1:\" & LayerParallaxX(\"TestLayer1\")  & \" | \" & \"Layer3:\" & LayerParallaxX(\"TestLayer2\")"
 							}
 						}
 					],

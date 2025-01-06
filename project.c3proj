@@ -9,42 +9,42 @@
 		{
 			"type": "plugin",
 			"id": "AdvancedRandom",
-			"name": "高级随机",
+			"name": "Advanced Random",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "plugin",
 			"id": "Arr",
-			"name": "数组",
+			"name": "Array",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "plugin",
 			"id": "Audio",
-			"name": "音频",
+			"name": "Audio",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "plugin",
 			"id": "BinaryData",
-			"name": "二进制",
+			"name": "Binary Data",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "plugin",
 			"id": "Browser",
-			"name": "浏览器",
+			"name": "Browser",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "plugin",
 			"id": "Dictionary",
-			"name": "字典",
+			"name": "Dictionary",
 			"author": "Scirra",
 			"bundled": false
 		},
@@ -58,21 +58,21 @@
 		{
 			"type": "plugin",
 			"id": "Keyboard",
-			"name": "键盘",
+			"name": "Keyboard",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "plugin",
 			"id": "List",
-			"name": "列表",
+			"name": "List",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "plugin",
 			"id": "LocalStorage",
-			"name": "本地存储",
+			"name": "Local storage",
 			"author": "Scirra",
 			"bundled": false
 		},
@@ -86,77 +86,98 @@
 		{
 			"type": "plugin",
 			"id": "Sprite",
-			"name": "精灵",
+			"name": "Sprite",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "plugin",
 			"id": "video",
-			"name": "视频",
+			"name": "Video",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "behavior",
 			"id": "Fade",
-			"name": "淡入淡出",
+			"name": "Fade",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "behavior",
 			"id": "MoveTo",
-			"name": "移动到",
+			"name": "Move To",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Orbit",
+			"name": "Orbit",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "behavior",
 			"id": "Persist",
-			"name": "持久化",
+			"name": "Persist",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "behavior",
 			"id": "Physics",
-			"name": "物理",
+			"name": "Physics",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Platform",
+			"name": "Platform",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "behavior",
 			"id": "Sin",
-			"name": "正弦运动",
+			"name": "Sine",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "behavior",
 			"id": "Timer",
-			"name": "计时器",
+			"name": "Timer",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "behavior",
 			"id": "Tween",
-			"name": "补间动画",
+			"name": "Tween",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "jumpthru",
+			"name": "Jump-thru",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "behavior",
 			"id": "scrollto",
-			"name": "镜头跟随",
+			"name": "Scroll To",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "behavior",
 			"id": "solid",
-			"name": "实体",
+			"name": "Solid",
 			"author": "Scirra",
 			"bundled": false
 		}
@@ -184,7 +205,9 @@
 			"BinaryData2",
 			"Tween",
 			"MoveToObject",
-			"AdvancedRandom"
+			"AdvancedRandom",
+			"OrbitObject",
+			"SineObject"
 		],
 		"subfolders": [
 			{
@@ -193,6 +216,16 @@
 				],
 				"subfolders": [],
 				"name": "Behavior"
+			},
+			{
+				"items": [
+					"Character",
+					"Ground",
+					"Jump",
+					"MovePlantform"
+				],
+				"subfolders": [],
+				"name": "Plantform"
 			}
 		]
 	},
@@ -223,7 +256,9 @@
 			"Video",
 			"MoveTo",
 			"AdvancedRandom",
-			"Layer"
+			"Layer",
+			"Orbit",
+			"Plantform"
 		],
 		"subfolders": [
 			{
@@ -254,7 +289,9 @@
 			"VideoSheet",
 			"MoveToSheet",
 			"AdvancedRandomSheet",
-			"LayerSheet"
+			"LayerSheet",
+			"OrbitSheet",
+			"Plantform"
 		],
 		"subfolders": [
 			{
